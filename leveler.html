@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Text Leveler · Newsela</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="brand"></div>
+  <div class="search">Search for articles, standards, videos, lessons</div>
+  <div class="nav-links">
+    <a href="index.html">← Home</a>
+    <a>Content library</a>
+    <a>My classes</a>
+  </div>
+  <div class="avatar">CM</div>
+</nav>
+
+<div class="stub-page">
+  <div class="stub-breadcrumb"><a href="index.html">Home</a> / Text Leveler</div>
+
+  <div id="routed-banner" class="stub-panel routed-from" style="display:none;margin-bottom:16px;">
+    <strong>Luna routed you here</strong> based on your prompt:
+    <em id="routed-prompt" style="display:block;margin-top:4px;"></em>
+  </div>
+
+  <div class="stub-panel">
+    <h1><span style="background:linear-gradient(135deg,#6b3fd4,#1a6bff);color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:0.04em;">LUNA</span> Text Leveler</h1>
+    <p class="sub">Paste any text or article URL. Luna will generate leveled versions students can actually read.</p>
+
+    <div class="form-row">
+      <label>Source text</label>
+      <textarea id="source-text" style="min-height:130px;">Photosynthesis is the biochemical process by which plants, algae, and certain bacteria convert light energy, usually from the sun, into chemical energy stored in glucose molecules. This process occurs primarily in the chloroplasts of plant cells and is fundamental to the ecosystem, as it provides the oxygen and organic compounds upon which nearly all other life forms depend.</textarea>
+    </div>
+
+    <div style="text-align:right;margin-bottom:24px;">
+      <button class="primary-btn">Level this text ✨</button>
+    </div>
+
+    <h3 style="margin:20px 0 10px; font-size:15px;">Leveled versions</h3>
+
+    <div class="leveler-grid">
+      <div class="leveler-card">
+        <div class="lvl-header">
+          <span class="grade-chip">Gr 3</span>
+          <span>120 words · Lexile 520L</span>
+        </div>
+        <p>Plants eat sunlight. Well, not exactly. But they use it to make their own food. Plants take in sunlight, water, and a gas called carbon dioxide. Then they turn these things into a sugar called glucose, which is food for the plant. This happens inside green parts of plants called chloroplasts. Without this process, people and animals would have no air to breathe and nothing to eat.</p>
+      </div>
+
+      <div class="leveler-card">
+        <div class="lvl-header">
+          <span class="grade-chip">Gr 5</span>
+          <span>140 words · Lexile 780L</span>
+        </div>
+        <p>Photosynthesis is how plants make their own food. Plants, along with algae and some kinds of bacteria, use energy from sunlight to turn water and carbon dioxide into a sugar called glucose. This happens inside tiny parts of the plant cell called chloroplasts. Photosynthesis is very important. It produces the oxygen we breathe and the food that other living things eat. Without it, most life on Earth could not exist.</p>
+      </div>
+
+      <div class="leveler-card">
+        <div class="lvl-header">
+          <span class="grade-chip">Gr 7</span>
+          <span>160 words · Lexile 950L</span>
+        </div>
+        <p>Photosynthesis is the process plants, algae, and certain bacteria use to turn light energy into chemical energy. These organisms capture sunlight and use it to combine water and carbon dioxide, producing glucose — a type of sugar that stores energy. The process takes place mostly inside chloroplasts, structures found in plant cells. Photosynthesis is essential to ecosystems because it releases oxygen into the air and creates the organic compounds that nearly all other life forms rely on to survive.</p>
+      </div>
+
+      <div class="leveler-card">
+        <div class="lvl-header">
+          <span class="grade-chip">Gr 9+</span>
+          <span>Original · Lexile 1200L</span>
+        </div>
+        <p>Photosynthesis is the biochemical process by which plants, algae, and certain bacteria convert light energy, usually from the sun, into chemical energy stored in glucose molecules. This process occurs primarily in the chloroplasts of plant cells and is fundamental to the ecosystem, as it provides the oxygen and organic compounds upon which nearly all other life forms depend.</p>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:10px;margin-top:22px;">
+      <button class="primary-btn">＋ Add all to assignment</button>
+      <button style="background:white;border:1.5px solid var(--nw-border-strong);padding:10px 16px;border-radius:8px;font-weight:600;font-size:13px;">Download as PDF</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var p = new URLSearchParams(location.search).get('prompt');
+  var from = new URLSearchParams(location.search).get('from');
+  if (p && from === 'v2') {
+    var banner = document.getElementById('routed-banner');
+    document.getElementById('routed-prompt').textContent = '"' + p + '"';
+    banner.style.display = 'block';
+  }
+})();
+</script>
+</body>
+</html>

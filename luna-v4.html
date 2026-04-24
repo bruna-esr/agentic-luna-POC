@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luna · Newsela</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="luna-page">
+
+<nav class="topnav">
+  <div class="nav-left">
+    <button class="topnav-waffle" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <circle cx="3" cy="3" r="1.5" fill="currentColor"/>
+        <circle cx="9" cy="3" r="1.5" fill="currentColor"/>
+        <circle cx="15" cy="3" r="1.5" fill="currentColor"/>
+        <circle cx="3" cy="9" r="1.5" fill="currentColor"/>
+        <circle cx="9" cy="9" r="1.5" fill="currentColor"/>
+        <circle cx="15" cy="9" r="1.5" fill="currentColor"/>
+        <circle cx="3" cy="15" r="1.5" fill="currentColor"/>
+        <circle cx="9" cy="15" r="1.5" fill="currentColor"/>
+        <circle cx="15" cy="15" r="1.5" fill="currentColor"/>
+      </svg>
+    </button>
+    <a href="index.html" class="brand"><img src="assets/img/newsela-logo.svg" alt="Newsela" /></a>
+  </div>
+  <div class="topnav-search">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <span>Search for texts and more</span>
+  </div>
+  <div class="nav-links">
+    <a class="nav-link">ELA</a>
+    <a class="nav-link">Social Studies</a>
+    <a class="nav-link">Science</a>
+    <a class="nav-link">Content library
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a class="nav-link">Classes
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a class="nav-link">Assignments</a>
+  </div>
+  <div class="nav-right">
+    <div class="topnav-profile">
+      <div class="topnav-avatar">CM</div>
+      <span class="topnav-subjects">ELA / SS / SCI</span>
+      <svg class="topnav-profile-chevron" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <button class="topnav-help" aria-label="Help">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9.5" stroke="currentColor" stroke-width="1.5"/><path d="M9 8.5a2 2 0 1 1 2.5 1.94c-.8.22-1.5.94-1.5 1.86V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="11" cy="15.5" r=".75" fill="currentColor"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="luna-shell" id="luna-shell">
+  <section class="chat-main">
+    <div class="chat-header">
+      <div class="title">
+        <a href="index.html" class="back-home" aria-label="Back to homepage">←</a>
+        <span class="luna-chip">LUNA ✦</span>
+        <span id="chat-title">New chat</span>
+        <span class="luna-beta-badge">BETA</span>
+      </div>
+      <div class="actions">
+        <button class="open-panel-btn" id="open-panel-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+          Open side panel
+        </button>
+      </div>
+    </div>
+
+    <div class="chat-stream" id="chat-stream"></div>
+
+    <div class="chat-input-bar">
+      <div class="chat-input">
+        <textarea id="chat-input" placeholder="Ask a follow-up — e.g. 'swap in a different article' or 'make the lesson 30 min'"></textarea>
+        <button class="send-btn" id="chat-send" aria-label="Send">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <aside class="artifact-panel" id="artifact-panel">
+    <div class="artifact-header">
+      <div class="art-h-left">
+        <div class="art-h-title" id="art-title"><span class="luna-badge">LUNA ✦</span> Your materials</div>
+        <div class="art-h-sub" id="art-sub">AI-generated resources for your assignment.</div>
+      </div>
+      <button class="art-close" id="art-close" aria-label="Close">×</button>
+    </div>
+    <div class="artifact-body" id="artifact-body">
+      <div class="panel-empty-state" id="panel-empty-state">
+        <div class="panel-empty-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <p class="panel-empty-title">No materials yet</p>
+        <p class="panel-empty-sub">Chat with Luna to find content and generate supporting materials for your lesson.</p>
+      </div>
+    </div>
+    <div class="artifact-actions" id="artifact-actions"></div>
+  </aside>
+</div>
+
+<!-- Content preview modal -->
+<div id="preview-modal" class="preview-modal" role="dialog" aria-modal="true" aria-labelledby="preview-modal-title">
+  <div class="preview-modal-backdrop"></div>
+  <div class="preview-modal-card">
+    <div class="preview-modal-header">
+      <div class="preview-modal-header-left">
+        <div class="preview-modal-title" id="preview-modal-title">
+          <span class="luna-badge">LUNA ✦</span>
+          <span id="pm-title-text">Content preview</span>
+        </div>
+        <div class="preview-modal-sub" id="pm-sub">Review before including it in your assignment</div>
+      </div>
+      <button class="preview-modal-close" id="preview-modal-close" aria-label="Close">×</button>
+    </div>
+    <div class="preview-modal-body" id="pm-body"></div>
+    <div class="preview-modal-footer" id="pm-footer"></div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>initLunaV4();</script>
+</body>
+</html>

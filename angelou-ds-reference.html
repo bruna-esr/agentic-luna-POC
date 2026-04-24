@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angelou Design System 2.0 — Visual Reference</title>
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Base ── */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: #F7F8F8;
+      color: #1D1D1D;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* ── Page header ── */
+    .page-header { background: #082C88; color: white; padding: 56px; }
+    .page-header__eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.55; margin-bottom: 8px; }
+    .page-header__title { font-size: 40px; font-weight: 700; line-height: 1.1; margin-bottom: 12px; }
+    .page-header__sub { font-size: 16px; opacity: 0.65; max-width: 500px; line-height: 1.6; }
+
+    /* ── Nav ── */
+    .page-nav {
+      background: white; border-bottom: 1px solid #E1E3E5;
+      display: flex; overflow-x: auto; padding: 0 56px;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .page-nav a {
+      display: inline-block; padding: 14px 14px; font-size: 13px; font-weight: 600;
+      color: #5B5A61; text-decoration: none; border-bottom: 2px solid transparent;
+      white-space: nowrap; transition: color 0.15s;
+    }
+    .page-nav a:hover { color: #0A6EFA; border-bottom-color: #0A6EFA; }
+
+    /* ── Container ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 56px 120px; }
+
+    /* ── Sections ── */
+    .section { padding-top: 72px; }
+    .section-header { margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid #E1E3E5; }
+    .section-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #8D8D96; margin-bottom: 8px; }
+    .section-title { font-size: 28px; font-weight: 700; color: #1D1D1D; line-height: 1.2; margin-bottom: 8px; }
+    .section-desc { font-size: 15px; color: #5B5A61; max-width: 620px; line-height: 1.6; }
+
+    .subsection { margin-top: 40px; }
+    .sub-title { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #77767A; margin-bottom: 16px; }
+    .group-title { font-size: 13px; font-weight: 700; color: #5B5A61; margin-bottom: 12px; margin-top: 24px; }
+    .group-title:first-child { margin-top: 0; }
+
+    hr.divider { border: none; border-top: 1px solid #E1E3E5; margin: 56px 0; }
+
+    /* ── Demo helpers ── */
+    .row { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+    .col { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+    .lbl { font-size: 11px; color: #8D8D96; }
+
+    /* ── Color swatches ── */
+    .color-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+    .sw { display: flex; flex-direction: column; gap: 5px; width: 68px; }
+    .sw__b { width: 68px; height: 44px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.08); }
+    .sw__n { font-size: 10px; font-weight: 700; color: #424147; line-height: 1.3; }
+    .sw__h { font-size: 10px; color: #77767A; font-family: 'SF Mono','Fira Code',monospace; }
+
+    /* ── Badge ── */
+    .badge { display: inline-flex; align-items: center; gap: 4px; border-radius: 12px; font-size: 12px; line-height: 1.33; white-space: nowrap; padding: 0 8px; }
+    .badge-32 { height: 32px; border-radius: 16px; font-size: 13px; }
+    .badge-24 { height: 24px; }
+    .badge-16 { height: 16px; border-radius: 8px; font-size: 10px; padding: 0 5px; }
+
+    /* ── Button ── */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border-radius: 8px; font-weight: 700; white-space: nowrap; line-height: 1; border: none; }
+    .btn-48 { height: 48px; padding: 0 20px; font-size: 16px; }
+    .btn-32 { height: 32px; padding: 0 16px; font-size: 14px; }
+    .btn-24 { height: 24px; padding: 0 12px; font-size: 13px; }
+    .btn-primary   { background: #082C88; color: white; }
+    .btn-secondary { background: white; color: #082C88; border: 1px solid #082C88; }
+    .btn-tertiary  { background: transparent; color: #082C88; }
+    .btn-muted     { background: #F7F8F8; color: #082C88; border: 1px solid #E1E3E5; }
+    .btn-danger    { background: #C32113; color: white; }
+    .btn-disabled  { background: #E1E3E5; color: #8D8D96; cursor: not-allowed; }
+    .btn-polar-p   { background: white; color: #082C88; border: 1px solid white; }
+    .btn-polar-s   { background: transparent; color: white; border: 1px solid white; }
+    .btn-polar-t   { background: transparent; color: white; }
+    .btn-polar-m   { background: rgba(255,255,255,0.16); color: white; }
+
+    /* ── Chip ── */
+    .chip { display: inline-flex; align-items: center; gap: 4px; border-radius: 100px; font-size: 14px; padding: 0 10px; white-space: nowrap; }
+    .chip-32 { height: 32px; }
+    .chip-24 { height: 24px; font-size: 13px; }
+    .chip-light { background: #F0F1F2; border: 1px solid #1D1D1D; color: #1D1D1D; }
+    .chip-dis   { background: rgba(234,235,236,0.4); border: none; color: #5B5A61; }
+    .chip-dark  { background: #424147; border: 1px solid white; color: white; }
+
+    /* ── Breadcrumb ── */
+    .bc { display: inline-flex; align-items: center; gap: 4px; }
+    .bc-link { font-size: 12px; color: #5B5A61; text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+    .bc-cur  { font-size: 12px; color: #1D1D1D; white-space: nowrap; }
+    .bc-sep  { font-size: 12px; color: #8D8D96; }
+    .bc-dot  { font-size: 12px; color: #5B5A61; }
+    .bc-chev { font-size: 9px; color: #5B5A61; }
+
+    /* ── Alert Banner ── */
+    .alert { display: flex; align-items: flex-start; gap: 8px; padding: 8px 16px; width: 100%; }
+    .alert--compound { padding: 16px; gap: 16px; }
+
+    /* ── Marketing Banner ── */
+    .mkt { display: flex; align-items: center; gap: 16px; padding: 8px 16px; width: 100%; }
+    .mkt--compound { padding: 16px; align-items: flex-start; }
+
+    /* ── Input ── */
+    .input-wrap { display: flex; flex-direction: column; gap: 6px; width: 220px; }
+    .input-label { font-size: 13px; font-weight: 700; color: #424147; }
+    .input-field { display: flex; align-items: center; height: 48px; padding: 0 12px; border-radius: 4px; border: 1px solid #A8AAB0; background: white; font-size: 16px; color: #5B5A61; }
+    .input-focused { border: 2px solid #0A6EFA; }
+    .input-error   { border: 1px solid #DD3636; }
+    .input-disabled { background: #F7F8F8; border-color: #E1E3E5; color: #8D8D96; }
+    .input-help { font-size: 12px; color: #77767A; }
+    .input-err-msg { font-size: 12px; color: #DD3636; display: flex; align-items: center; gap: 4px; }
+
+    /* ── Controls ── */
+    .ctrl { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: #1D1D1D; }
+    .ctrl__box { width: 18px; height: 18px; border-radius: 3px; border: 2px solid #77767A; background: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ctrl__box--on  { border-color: #0A6EFA; background: #0A6EFA; }
+    .ctrl__box--dis { border-color: #A8AAB0; background: #F0F1F2; }
+    .ctrl__circle { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #77767A; background: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ctrl__circle--on { border-color: #0A6EFA; }
+    .ctrl__dot { width: 8px; height: 8px; border-radius: 50%; background: #0A6EFA; }
+    .toggle-track { width: 36px; height: 20px; border-radius: 10px; background: #A8AAB0; position: relative; flex-shrink: 0; }
+    .toggle-track--on  { background: #0A6EFA; }
+    .toggle-track--dis { background: #E1E3E5; }
+    .toggle-thumb { width: 16px; height: 16px; border-radius: 50%; background: white; position: absolute; top: 2px; left: 2px; }
+    .toggle-thumb--on { left: 18px; }
+
+    /* ── Accordion ── */
+    .acc { border-radius: 8px; overflow: hidden; max-width: 560px; border: 1px solid #E1E3E5; }
+    .acc-hd { display: flex; align-items: center; height: 64px; padding: 0 16px; background: white; font-size: 16px; color: #424147; border-bottom: 1px solid #E1E3E5; }
+    .acc-hd:last-child { border-bottom: none; }
+    .acc-hd--active { background: rgba(29,29,29,0.06); box-shadow: inset 0 0 0 1px #082C88; }
+    .acc-hd--dis { opacity: 0.4; }
+    .acc-body { background: #F8F8F8; padding: 16px 16px 24px; font-size: 16px; color: #5B5A61; line-height: 1.6; border-bottom: 1px solid #E1E3E5; }
+
+    /* ── Tabs ── */
+    .tabs { display: flex; border-bottom: 2px solid #E1E3E5; }
+    .tab { padding: 10px 16px; font-size: 14px; font-weight: 700; color: #5B5A61; border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; }
+    .tab--active { color: #0A6EFA; border-bottom-color: #0A6EFA; }
+    .tab--dis { color: #8D8D96; }
+
+    /* ── Toast ── */
+    .toast { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 8px; max-width: 480px; font-size: 14px; line-height: 1.4; }
+
+    /* ── Type scale ── */
+    .type-row { display: flex; align-items: baseline; gap: 20px; padding: 12px 0; border-bottom: 1px solid #E1E3E5; }
+    .type-spec { width: 180px; flex-shrink: 0; font-size: 11px; color: #77767A; font-family: 'SF Mono','Fira Code',monospace; }
+
+    /* ── Footer ── */
+    footer { background: #1D1D1D; color: rgba(255,255,255,0.45); padding: 32px 56px; font-size: 12px; margin-top: 80px; }
+    footer strong { color: white; }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────────────────────────────────── -->
+<div class="page-header">
+  <div class="page-header__eyebrow">Newsela</div>
+  <h1 class="page-header__title">Angelou Design System 2.0</h1>
+  <p class="page-header__sub">Visual reference for design tokens and components. Open in any browser — no server required.</p>
+</div>
+
+<!-- ── Nav ────────────────────────────────────────────────────────────────── -->
+<nav class="page-nav">
+  <a href="#colors">Colors</a>
+  <a href="#typography">Typography</a>
+  <a href="#badges">Badges</a>
+  <a href="#buttons">Buttons</a>
+  <a href="#chips">Chips</a>
+  <a href="#breadcrumbs">Breadcrumbs</a>
+  <a href="#banners">Banners</a>
+  <a href="#inputs">Inputs</a>
+  <a href="#selection">Selection</a>
+  <a href="#accordion">Accordion</a>
+  <a href="#tabs">Tabs</a>
+  <a href="#toasts">Toasts</a>
+  <a href="#dividers">Dividers</a>
+  <a href="#luna-ai" style="background:linear-gradient(102deg,#00CDF6 0%,#1088EB 25%,#1F3CD7 50%,#691C9C 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;">Luna / AI</a>
+</nav>
+
+<div class="container">
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- COLORS                                                                  -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="colors">
+  <div class="section-header">
+    <div class="section-eyebrow">Foundation</div>
+    <h2 class="section-title">Color Tokens</h2>
+    <p class="section-desc">Brand colors form the visual identity. UI and Status aliases provide semantic meaning for interface use. All tokens are available as CSS custom properties in <code>colors.css</code>.</p>
+  </div>
+
+  <!-- Brand Blue -->
+  <div class="subsection">
+    <div class="sub-title">Brand Blue</div>
+    <div class="color-row">
+      <div class="sw"><div class="sw__b" style="background:#082C88"></div><div class="sw__n">Blue 700</div><div class="sw__h">#082C88</div></div>
+      <div class="sw"><div class="sw__b" style="background:#0F3FDE"></div><div class="sw__n">Blue 600</div><div class="sw__h">#0F3FDE</div></div>
+      <div class="sw"><div class="sw__b" style="background:#0A6EFA"></div><div class="sw__n">Blue 500</div><div class="sw__h">#0A6EFA</div></div>
+      <div class="sw"><div class="sw__b" style="background:#3688FD"></div><div class="sw__n">Blue 300</div><div class="sw__h">#3688FD</div></div>
+      <div class="sw"><div class="sw__b" style="background:#A6CCFF"></div><div class="sw__n">Blue 100</div><div class="sw__h">#A6CCFF</div></div>
+      <div class="sw"><div class="sw__b" style="background:#CCE1FF"></div><div class="sw__n">Blue 50</div><div class="sw__h">#CCE1FF</div></div>
+      <div class="sw"><div class="sw__b" style="background:#E5EFFF"></div><div class="sw__n">Blue 25</div><div class="sw__h">#E5EFFF</div></div>
+    </div>
+  </div>
+
+  <!-- Brand Aqua -->
+  <div class="subsection">
+    <div class="sub-title">Brand Aqua</div>
+    <div class="color-row">
+      <div class="sw"><div class="sw__b" style="background:#208095"></div><div class="sw__n">Aqua 700</div><div class="sw__h">#208095</div></div>
+      <div class="sw"><div class="sw__b" style="background:#31AFCB"></div><div class="sw__n">Aqua 600</div><div class="sw__h">#31AFCB</div></div>
+      <div class="sw"><div class="sw__b" style="background:#42CAE7"></div><div class="sw__n">Aqua 500</div><div class="sw__h">#42CAE7</div></div>
+      <div class="sw"><div class="sw__b" style="background:#6AE0F8"></div><div class="sw__n">Aqua 300</div><div class="sw__h">#6AE0F8</div></div>
+      <div class="sw"><div class="sw__b" style="background:#ABF0FD"></div><div class="sw__n">Aqua 100</div><div class="sw__h">#ABF0FD</div></div>
+      <div class="sw"><div class="sw__b" style="background:#D4F8FE"></div><div class="sw__n">Aqua 50</div><div class="sw__h">#D4F8FE</div></div>
+      <div class="sw"><div class="sw__b" style="background:#E9FCFF"></div><div class="sw__n">Aqua 25</div><div class="sw__h">#E9FCFF</div></div>
+    </div>
+  </div>
+
+  <!-- Brand Bisque -->
+  <div class="subsection">
+    <div class="sub-title">Brand Bisque</div>
+    <div class="color-row">
+      <div class="sw"><div class="sw__b" style="background:#564732"></div><div class="sw__n">Bisque 700</div><div class="sw__h">#564732</div></div>
+      <div class="sw"><div class="sw__b" style="background:#8B7351"></div><div class="sw__n">Bisque 600</div><div class="sw__h">#8B7351</div></div>
+      <div class="sw"><div class="sw__b" style="background:#C7A475"></div><div class="sw__n">Bisque 500</div><div class="sw__h">#C7A475</div></div>
+      <div class="sw"><div class="sw__b" style="background:#E5C08C"></div><div class="sw__n">Bisque 300</div><div class="sw__h">#E5C08C</div></div>
+      <div class="sw"><div class="sw__b" style="background:#F8D6A7"></div><div class="sw__n">Bisque 200</div><div class="sw__h">#F8D6A7</div></div>
+      <div class="sw"><div class="sw__b" style="background:#FDE7C7"></div><div class="sw__n">Bisque 100</div><div class="sw__h">#FDE7C7</div></div>
+      <div class="sw"><div class="sw__b" style="background:#FFF4E5"></div><div class="sw__n">Bisque 50</div><div class="sw__h">#FFF4E5</div></div>
+    </div>
+  </div>
+
+  <!-- Brand Neutral -->
+  <div class="subsection">
+    <div class="sub-title">Brand Neutral</div>
+    <div class="color-row">
+      <div class="sw"><div class="sw__b" style="background:#1D1D1D"></div><div class="sw__n">Neutral 700</div><div class="sw__h">#1D1D1D</div></div>
+      <div class="sw"><div class="sw__b" style="background:#424147"></div><div class="sw__n">Neutral 600</div><div class="sw__h">#424147</div></div>
+      <div class="sw"><div class="sw__b" style="background:#5B5A61"></div><div class="sw__n">Neutral 500</div><div class="sw__h">#5B5A61</div></div>
+      <div class="sw"><div class="sw__b" style="background:#77767A"></div><div class="sw__n">Neutral 400</div><div class="sw__h">#77767A</div></div>
+      <div class="sw"><div class="sw__b" style="background:#8D8D96"></div><div class="sw__n">Neutral 300</div><div class="sw__h">#8D8D96</div></div>
+      <div class="sw"><div class="sw__b" style="background:#A8AAB0"></div><div class="sw__n">Neutral 200</div><div class="sw__h">#A8AAB0</div></div>
+      <div class="sw"><div class="sw__b" style="background:#E1E3E5"></div><div class="sw__n">Neutral 100</div><div class="sw__h">#E1E3E5</div></div>
+      <div class="sw"><div class="sw__b" style="background:#F0F1F2"></div><div class="sw__n">Neutral 50</div><div class="sw__h">#F0F1F2</div></div>
+      <div class="sw"><div class="sw__b" style="background:#F7F8F8"></div><div class="sw__n">Neutral 25</div><div class="sw__h">#F7F8F8</div></div>
+      <div class="sw"><div class="sw__b" style="background:#FFFFFF; border:1px solid #E1E3E5;"></div><div class="sw__n">White</div><div class="sw__h">#FFFFFF</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Product Colors -->
+  <div class="subsection">
+    <div class="sub-title">Product Colors</div>
+
+    <div class="group-title">ELA — English Language Arts</div>
+    <div class="color-row">
+      <div class="sw"><div class="sw__b" style="background:#A50000"></div><div class="sw__n">ELA 700</div><div class="sw__h">#A50000</div></div>
+      <div class="sw"><div class="sw__b" style="background:#D30000"></div><div class="sw__n">ELA 600</div><div class="sw__h">#D30000</div></div>
+      <div class="sw"><div class="sw__b" style="background:#EB0404"></div><div class="sw__n">ELA 500</div><div class="sw__h">#EB0404</div></div>
+      <div class="sw"><div class="sw__b" style="background:#FC5B5D"></div><div class="sw__n">ELA 300</div><div class="sw__h">#FC5B5D</div></div>
+      <div class="sw"><div class="sw__b" style="background:#FEC4C5"></div><div class="sw__n">ELA 100</div><div class="sw__h">#FEC4C5</div></div>
+      <div class="sw"><div class="sw__b" style="background:#FFE2E2"></div><div class="sw__n">ELA 50</div><div class="sw__h">#FFE2E2</div></div>
+      <div class="sw"><div class="sw__b" style="background:#FFF0F0"></div><div class="sw__n">ELA 25</div><div class="sw__h">#FFF0F0</div></div>
+    </div>
+
+    <div class="group-title">Social Studies</div>
+    <div class="color-row">
+      <div class="sw"><div class="sw__b" style="background:#7D0145"></div><div class="sw__n">SS 700</div><div class="sw__h">#7D0145</div></div>
+      <div class="sw"><div class="sw__b" style="background:#A20154"></div><div class="sw__n">SS 600</div><div class="sw__h">#A20154</div></div>
+      <div class="sw"><div class="sw__b" style="background:#DA2C81"></div><div class="sw__n">SS 500</div><div class="sw__h">#DA2C81</div></div>
+      <div class="sw"><div class="sw__b" style="background:#EC4E9B"></div><div class="sw__n">SS 300</div><div class="sw__h">#EC4E9B</div></div>
+      <div class="sw"><div class="sw__b" style="background:#FFBCE4"></div><div class="sw__n">SS 100</div><div class="sw__h">#FFBCE4</div></div>
+      <div class="sw"><div class="sw__b" style="background:#FFDCF5"></div><div class="sw__n">SS 50</div><div class="sw__h">#FFDCF5</div></div>
+      <div class="sw"><div class="sw__b" style="background:#FEEAF9"></div><div class="sw__n">SS 25</div><div class="sw__h">#FEEAF9</div></div>
+    </div>
+
+    <div class="group-title">Science</div>
+    <div class="color-row">
+      <div class="sw"><div class="sw__b" style="background:#944E00"></div><div class="sw__n">Sci 700</div><div class="sw__h">#944E00</div></div>
+      <div class="sw"><div class="sw__b" style="background:#B85E00"></div><div class="sw__n">Sci 600</div><div class="sw__h">#B85E00</div></div>
+      <div class="sw"><div class="sw__b" style="background:#DA6D00"></div><div class="sw__n">Sci 500</div><div class="sw__h">#DA6D00</div></div>
+      <div class="sw"><div class="sw__b" style="background:#EB7E19"></div><div class="sw__n">Sci 300</div><div class="sw__h">#EB7E19</div></div>
+      <div class="sw"><div class="sw__b" style="background:#FED0AD"></div><div class="sw__n">Sci 100</div><div class="sw__h">#FED0AD</div></div>
+      <div class="sw"><div class="sw__b" style="background:#FFE9D8"></div><div class="sw__n">Sci 50</div><div class="sw__h">#FFE9D8</div></div>
+      <div class="sw"><div class="sw__b" style="background:#FFF4EC"></div><div class="sw__n">Sci 25</div><div class="sw__h">#FFF4EC</div></div>
+    </div>
+
+    <div class="group-title">Formative</div>
+    <div class="color-row">
+      <div class="sw"><div class="sw__b" style="background:#A06A00"></div><div class="sw__n">Form 700</div><div class="sw__h">#A06A00</div></div>
+      <div class="sw"><div class="sw__b" style="background:#BC8100"></div><div class="sw__n">Form 600</div><div class="sw__h">#BC8100</div></div>
+      <div class="sw"><div class="sw__b" style="background:#E8AB14"></div><div class="sw__n">Form 500</div><div class="sw__h">#E8AB14</div></div>
+      <div class="sw"><div class="sw__b" style="background:#F6C852"></div><div class="sw__n">Form 300</div><div class="sw__h">#F6C852</div></div>
+      <div class="sw"><div class="sw__b" style="background:#FEE3A4"></div><div class="sw__n">Form 100</div><div class="sw__h">#FEE3A4</div></div>
+      <div class="sw"><div class="sw__b" style="background:#FFF1D1"></div><div class="sw__n">Form 50</div><div class="sw__h">#FFF1D1</div></div>
+      <div class="sw"><div class="sw__b" style="background:#FFF8E8"></div><div class="sw__n">Form 25</div><div class="sw__h">#FFF8E8</div></div>
+    </div>
+
+    <div class="group-title">EverWrite</div>
+    <div class="color-row">
+      <div class="sw"><div class="sw__b" style="background:#54005C"></div><div class="sw__n">EW 700</div><div class="sw__h">#54005C</div></div>
+      <div class="sw"><div class="sw__b" style="background:#720780"></div><div class="sw__n">EW 600</div><div class="sw__h">#720780</div></div>
+      <div class="sw"><div class="sw__b" style="background:#8B1EA4"></div><div class="sw__n">EW 500</div><div class="sw__h">#8B1EA4</div></div>
+      <div class="sw"><div class="sw__b" style="background:#A354C9"></div><div class="sw__n">EW 300</div><div class="sw__h">#A354C9</div></div>
+      <div class="sw"><div class="sw__b" style="background:#D3BCEC"></div><div class="sw__n">EW 100</div><div class="sw__h">#D3BCEC</div></div>
+      <div class="sw"><div class="sw__b" style="background:#E7DCF6"></div><div class="sw__n">EW 50</div><div class="sw__h">#E7DCF6</div></div>
+      <div class="sw"><div class="sw__b" style="background:#F2EDFA"></div><div class="sw__n">EW 25</div><div class="sw__h">#F2EDFA</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Status -->
+  <div class="subsection">
+    <div class="sub-title">Status Colors</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px 48px;">
+      <div>
+        <div class="group-title">Success</div>
+        <div class="color-row">
+          <div class="sw"><div class="sw__b" style="background:#085E4A"></div><div class="sw__n">700</div><div class="sw__h">#085E4A</div></div>
+          <div class="sw"><div class="sw__b" style="background:#17786C"></div><div class="sw__n">600</div><div class="sw__h">#17786C</div></div>
+          <div class="sw"><div class="sw__b" style="background:#0F8670"></div><div class="sw__n">500</div><div class="sw__h">#0F8670</div></div>
+          <div class="sw"><div class="sw__b" style="background:#25C09B"></div><div class="sw__n">300</div><div class="sw__h">#25C09B</div></div>
+          <div class="sw"><div class="sw__b" style="background:#B9F9EA"></div><div class="sw__n">100</div><div class="sw__h">#B9F9EA</div></div>
+          <div class="sw"><div class="sw__b" style="background:#D3FBF2"></div><div class="sw__n">50</div><div class="sw__h">#D3FBF2</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="group-title">Info</div>
+        <div class="color-row">
+          <div class="sw"><div class="sw__b" style="background:#0B1386"></div><div class="sw__n">700</div><div class="sw__h">#0B1386</div></div>
+          <div class="sw"><div class="sw__b" style="background:#0438E5"></div><div class="sw__n">600</div><div class="sw__h">#0438E5</div></div>
+          <div class="sw"><div class="sw__b" style="background:#0A6EFA"></div><div class="sw__n">500</div><div class="sw__h">#0A6EFA</div></div>
+          <div class="sw"><div class="sw__b" style="background:#6BA8FF"></div><div class="sw__n">300</div><div class="sw__h">#6BA8FF</div></div>
+          <div class="sw"><div class="sw__b" style="background:#A6CCFF"></div><div class="sw__n">100</div><div class="sw__h">#A6CCFF</div></div>
+          <div class="sw"><div class="sw__b" style="background:#E5EFFF"></div><div class="sw__n">50</div><div class="sw__h">#E5EFFF</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="group-title">Warning</div>
+        <div class="color-row">
+          <div class="sw"><div class="sw__b" style="background:#A06A00"></div><div class="sw__n">700</div><div class="sw__h">#A06A00</div></div>
+          <div class="sw"><div class="sw__b" style="background:#BC8100"></div><div class="sw__n">600</div><div class="sw__h">#BC8100</div></div>
+          <div class="sw"><div class="sw__b" style="background:#FEC800"></div><div class="sw__n">500</div><div class="sw__h">#FEC800</div></div>
+          <div class="sw"><div class="sw__b" style="background:#FFE45B"></div><div class="sw__n">300</div><div class="sw__h">#FFE45B</div></div>
+          <div class="sw"><div class="sw__b" style="background:#FFF1AB"></div><div class="sw__n">100</div><div class="sw__h">#FFF1AB</div></div>
+          <div class="sw"><div class="sw__b" style="background:#FFF8D2"></div><div class="sw__n">50</div><div class="sw__h">#FFF8D2</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="group-title">Danger</div>
+        <div class="color-row">
+          <div class="sw"><div class="sw__b" style="background:#A50000"></div><div class="sw__n">700</div><div class="sw__h">#A50000</div></div>
+          <div class="sw"><div class="sw__b" style="background:#C32113"></div><div class="sw__n">600</div><div class="sw__h">#C32113</div></div>
+          <div class="sw"><div class="sw__b" style="background:#DD3636"></div><div class="sw__n">500</div><div class="sw__h">#DD3636</div></div>
+          <div class="sw"><div class="sw__b" style="background:#FF6B6B"></div><div class="sw__n">300</div><div class="sw__h">#FF6B6B</div></div>
+          <div class="sw"><div class="sw__b" style="background:#FEC4C5"></div><div class="sw__n">100</div><div class="sw__h">#FEC4C5</div></div>
+          <div class="sw"><div class="sw__b" style="background:#FFE2E2"></div><div class="sw__n">50</div><div class="sw__h">#FFE2E2</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Luna AI Colors -->
+  <div class="subsection">
+    <div class="sub-title" style="background:linear-gradient(102deg,#00CDF6 0%,#1088EB 25%,#1F3CD7 50%,#691C9C 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">Luna AI — Gradient System</div>
+    <p style="font-size:13px;color:#5B5A61;margin-bottom:16px;">The Luna gradient is a 4-stop spectrum from Aqua to Purple, used across all AI-branded UI — buttons, chips, inputs, tags, and chat bubbles.</p>
+    <div style="height:48px;border-radius:8px;background:linear-gradient(102deg,#00CDF6 0%,#1088EB 25%,#1F3CD7 50%,#691C9C 100%);margin-bottom:20px;"></div>
+    <div class="color-row">
+      <div class="sw"><div class="sw__b" style="background:#00CDF6"></div><div class="sw__n">Aqua</div><div class="sw__h">#00CDF6</div></div>
+      <div class="sw"><div class="sw__b" style="background:#1088EB"></div><div class="sw__n">Blue</div><div class="sw__h">#1088EB</div></div>
+      <div class="sw"><div class="sw__b" style="background:#1F3CD7"></div><div class="sw__n">Cobalt</div><div class="sw__h">#1F3CD7</div></div>
+      <div class="sw"><div class="sw__b" style="background:#691C9C"></div><div class="sw__n">Purple</div><div class="sw__h">#691C9C</div></div>
+    </div>
+    <div class="group-title" style="margin-top:24px;">UI Purple — Extended palette</div>
+    <div class="color-row">
+      <div class="sw"><div class="sw__b" style="background:#54005C"></div><div class="sw__n">Purple 700</div><div class="sw__h">#54005C</div></div>
+      <div class="sw"><div class="sw__b" style="background:#720780"></div><div class="sw__n">Purple 600</div><div class="sw__h">#720780</div></div>
+      <div class="sw"><div class="sw__b" style="background:#8B1EA4"></div><div class="sw__n">Purple 500</div><div class="sw__h">#8B1EA4</div></div>
+      <div class="sw"><div class="sw__b" style="background:#B582DA"></div><div class="sw__n">Purple 300</div><div class="sw__h">#B582DA</div></div>
+      <div class="sw"><div class="sw__b" style="background:#D3BCEC"></div><div class="sw__n">Purple 100</div><div class="sw__h">#D3BCEC</div></div>
+      <div class="sw"><div class="sw__b" style="background:#E7DCF6"></div><div class="sw__n">Purple 50</div><div class="sw__h">#E7DCF6</div></div>
+      <div class="sw"><div class="sw__b" style="background:#F2EDFA"></div><div class="sw__n">Purple 25</div><div class="sw__h">#F2EDFA</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- TYPOGRAPHY                                                              -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="typography">
+  <div class="section-header">
+    <div class="section-eyebrow">Foundation</div>
+    <h2 class="section-title">Typography</h2>
+    <p class="section-desc">Angelou uses <strong>Circular</strong> as the primary typeface in Book (400) and Bold (700) weights. Letter-spacing is 0 across all sizes. <strong>Noto Serif Bold</strong> is used exclusively in Marketing Banners.</p>
+  </div>
+
+  <div class="subsection">
+    <div class="sub-title">Type scale · Circular</div>
+    <div class="type-row"><div class="type-spec">32px · Bold · 1.2</div><span style="font-size:32px;font-weight:700;line-height:1.2;">Page heading</span></div>
+    <div class="type-row"><div class="type-spec">24px · Bold · 1.2</div><span style="font-size:24px;font-weight:700;line-height:1.2;">Section heading</span></div>
+    <div class="type-row"><div class="type-spec">20px · Bold · 1.2</div><span style="font-size:20px;font-weight:700;line-height:1.2;">Sub-section heading</span></div>
+    <div class="type-row"><div class="type-spec">16px · Book · 1.5</div><span style="font-size:16px;font-weight:400;line-height:1.5;">Body — default reading size for content and descriptions.</span></div>
+    <div class="type-row"><div class="type-spec">14px · Book · 1.5</div><span style="font-size:14px;font-weight:400;line-height:1.5;">Body small — secondary content, UI labels, and helper text.</span></div>
+    <div class="type-row"><div class="type-spec">13px · Bold · 1.2</div><span style="font-size:13px;font-weight:700;line-height:1.2;">Label Bold — form labels and compact headings.</span></div>
+    <div class="type-row"><div class="type-spec">12px · Book · 1.33</div><span style="font-size:12px;font-weight:400;line-height:1.33;">Label XS — breadcrumbs, badges, and compact UI.</span></div>
+    <div class="type-row"><div class="type-spec">11px · Bold · 1 · +1.5px</div><span style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#8D8D96;">OVERLINE / EYEBROW LABEL</span></div>
+  </div>
+
+  <div class="subsection">
+    <div class="sub-title">Noto Serif Bold — Marketing Banners only</div>
+    <div style="font-family:'Georgia',serif;font-weight:700;font-size:20px;color:#1D1D1D;padding:20px 0;border-top:1px solid #E1E3E5;">
+      A message from your Broward Administrator
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- BADGES                                                                  -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="badges">
+  <div class="section-header">
+    <div class="section-eyebrow">Components</div>
+    <h2 class="section-title">Badge</h2>
+    <p class="section-desc">Status indicators in 4 styles (Filled, Hollowed, Flat, Dot), 10 colors, 3 tints, and 3 sizes.</p>
+  </div>
+
+  <div class="subsection">
+    <div class="sub-title">Filled — Dark tint</div>
+    <div class="row">
+      <div class="col"><span class="badge badge-24" style="background:#0A6EFA;color:white;">Blue</span><span class="lbl">Blue</span></div>
+      <div class="col"><span class="badge badge-24" style="background:#DD3636;color:white;">Red</span><span class="lbl">Red</span></div>
+      <div class="col"><span class="badge badge-24" style="background:#FEC800;color:#1D1D1D;">Yellow</span><span class="lbl">Yellow</span></div>
+      <div class="col"><span class="badge badge-24" style="background:#0F8670;color:white;">Green</span><span class="lbl">Green</span></div>
+      <div class="col"><span class="badge badge-24" style="background:#208095;color:white;">Teal</span><span class="lbl">Teal</span></div>
+      <div class="col"><span class="badge badge-24" style="background:#C7A475;color:#1D1D1D;">Beige</span><span class="lbl">Beige</span></div>
+      <div class="col"><span class="badge badge-24" style="background:#DA2C81;color:white;">Pink</span><span class="lbl">Pink</span></div>
+      <div class="col"><span class="badge badge-24" style="background:#8B1EA4;color:white;">Purple</span><span class="lbl">Purple</span></div>
+      <div class="col"><span class="badge badge-24" style="background:#1D1D1D;color:white;">Black</span><span class="lbl">Black</span></div>
+      <div class="col"><span class="badge badge-24" style="background:#5B5A61;color:white;">Grey</span><span class="lbl">Grey</span></div>
+    </div>
+
+    <div class="group-title">Hollowed</div>
+    <div class="row">
+      <div class="col"><span class="badge badge-24" style="border:1px solid #0A6EFA;color:#0A6EFA;">Blue</span></div>
+      <div class="col"><span class="badge badge-24" style="border:1px solid #DD3636;color:#DD3636;">Red</span></div>
+      <div class="col"><span class="badge badge-24" style="border:1px solid #A06A00;color:#A06A00;">Yellow</span></div>
+      <div class="col"><span class="badge badge-24" style="border:1px solid #0F8670;color:#0F8670;">Green</span></div>
+      <div class="col"><span class="badge badge-24" style="border:1px solid #208095;color:#208095;">Teal</span></div>
+      <div class="col"><span class="badge badge-24" style="border:1px solid #8B7351;color:#8B7351;">Beige</span></div>
+      <div class="col"><span class="badge badge-24" style="border:1px solid #A20154;color:#A20154;">Pink</span></div>
+      <div class="col"><span class="badge badge-24" style="border:1px solid #720780;color:#720780;">Purple</span></div>
+    </div>
+
+    <div class="group-title">Dot</div>
+    <div class="row">
+      <div class="col"><span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#1D1D1D;"><span style="width:8px;height:8px;border-radius:50%;background:#0A6EFA;display:inline-block;flex-shrink:0;"></span>Blue</span></div>
+      <div class="col"><span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#1D1D1D;"><span style="width:8px;height:8px;border-radius:50%;background:#DD3636;display:inline-block;flex-shrink:0;"></span>Red</span></div>
+      <div class="col"><span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#1D1D1D;"><span style="width:8px;height:8px;border-radius:50%;background:#FEC800;display:inline-block;flex-shrink:0;"></span>Yellow</span></div>
+      <div class="col"><span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#1D1D1D;"><span style="width:8px;height:8px;border-radius:50%;background:#0F8670;display:inline-block;flex-shrink:0;"></span>Green</span></div>
+      <div class="col"><span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#1D1D1D;"><span style="width:8px;height:8px;border-radius:50%;background:#8B1EA4;display:inline-block;flex-shrink:0;"></span>Purple</span></div>
+    </div>
+
+    <div class="group-title">Sizes</div>
+    <div class="row">
+      <div class="col"><span class="badge badge-32" style="background:#0A6EFA;color:white;">Label</span><span class="lbl">32px</span></div>
+      <div class="col"><span class="badge badge-24" style="background:#0A6EFA;color:white;">Label</span><span class="lbl">24px</span></div>
+      <div class="col"><span class="badge badge-16" style="background:#0A6EFA;color:white;">Label</span><span class="lbl">16px</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- BUTTONS                                                                 -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="buttons">
+  <div class="section-header">
+    <div class="section-eyebrow">Components</div>
+    <h2 class="section-title">Button</h2>
+    <p class="section-desc">5 core variants across 3 sizes (48px, 32px, 24px). Polar variants for use on dark or image backgrounds.</p>
+  </div>
+
+  <div class="subsection">
+    <div class="sub-title">Core variants · Large 48px</div>
+    <div class="row">
+      <div class="col"><span class="btn btn-primary btn-48">Primary</span><span class="lbl">Primary</span></div>
+      <div class="col"><span class="btn btn-secondary btn-48">Secondary</span><span class="lbl">Secondary</span></div>
+      <div class="col"><span class="btn btn-tertiary btn-48">Tertiary</span><span class="lbl">Tertiary</span></div>
+      <div class="col"><span class="btn btn-muted btn-48">Muted</span><span class="lbl">Muted</span></div>
+      <div class="col"><span class="btn btn-danger btn-48">Danger</span><span class="lbl">Danger</span></div>
+      <div class="col"><span class="btn btn-disabled btn-48">Disabled</span><span class="lbl">Disabled</span></div>
+    </div>
+
+    <div class="group-title">Medium 32px</div>
+    <div class="row">
+      <span class="btn btn-primary btn-32">Primary</span>
+      <span class="btn btn-secondary btn-32">Secondary</span>
+      <span class="btn btn-tertiary btn-32">Tertiary</span>
+      <span class="btn btn-muted btn-32">Muted</span>
+      <span class="btn btn-danger btn-32">Danger</span>
+      <span class="btn btn-disabled btn-32">Disabled</span>
+    </div>
+
+    <div class="group-title">Small 24px</div>
+    <div class="row">
+      <span class="btn btn-primary btn-24">Primary</span>
+      <span class="btn btn-secondary btn-24">Secondary</span>
+      <span class="btn btn-tertiary btn-24">Tertiary</span>
+      <span class="btn btn-muted btn-24">Muted</span>
+      <span class="btn btn-danger btn-24">Danger</span>
+      <span class="btn btn-disabled btn-24">Disabled</span>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="sub-title">Polar — for dark backgrounds</div>
+    <div style="background:#082C88;border-radius:8px;padding:32px 28px;">
+      <div class="row">
+        <div class="col"><span class="btn btn-polar-p btn-48">Primary</span><span class="lbl" style="color:rgba(255,255,255,0.45);">Polar Primary</span></div>
+        <div class="col"><span class="btn btn-polar-s btn-48">Secondary</span><span class="lbl" style="color:rgba(255,255,255,0.45);">Polar Secondary</span></div>
+        <div class="col"><span class="btn btn-polar-t btn-48">Tertiary</span><span class="lbl" style="color:rgba(255,255,255,0.45);">Polar Tertiary</span></div>
+        <div class="col"><span class="btn btn-polar-m btn-48">Muted</span><span class="lbl" style="color:rgba(255,255,255,0.45);">Polar Muted</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- CHIPS                                                                   -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="chips">
+  <div class="section-header">
+    <div class="section-eyebrow">Components</div>
+    <h2 class="section-title">Chips</h2>
+    <p class="section-desc">Filter chips for faceted filtering. Input chips for removable tags. Two sizes (32px, 24px) and light / dark modes.</p>
+  </div>
+
+  <div class="subsection">
+    <div class="sub-title">Filter — Light mode</div>
+    <div class="row" style="margin-bottom:8px;">
+      <span class="chip chip-32 chip-light">All</span>
+      <span class="chip chip-32 chip-light">ELA</span>
+      <span class="chip chip-32 chip-light">Science</span>
+      <span class="chip chip-32 chip-light">Social Studies</span>
+      <span class="chip chip-32 chip-light">Math</span>
+      <span class="chip chip-32 chip-dis">Disabled</span>
+    </div>
+    <div class="row">
+      <span class="chip chip-24 chip-light">ELA</span>
+      <span class="chip chip-24 chip-light">Science</span>
+      <span class="chip chip-24 chip-light">Social Studies</span>
+      <span class="chip chip-24 chip-dis">Disabled</span>
+    </div>
+    <div class="group-title">Dark mode</div>
+    <div style="background:#1D1D1D;border-radius:8px;padding:20px 16px;">
+      <div class="row">
+        <span class="chip chip-32 chip-dark">ELA</span>
+        <span class="chip chip-32 chip-dark">Science</span>
+        <span class="chip chip-32 chip-dark">Social Studies</span>
+        <span class="chip chip-32 chip-dark" style="opacity:0.4;border:none;">Disabled</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="sub-title">Input chips (with ✕ remove)</div>
+    <div class="row">
+      <span class="chip chip-32 chip-light">Reading level 3 <span style="font-size:11px;opacity:0.55;margin-left:2px;">✕</span></span>
+      <span class="chip chip-32 chip-light">Science <span style="font-size:11px;opacity:0.55;margin-left:2px;">✕</span></span>
+      <span class="chip chip-32 chip-light">Last 30 days <span style="font-size:11px;opacity:0.55;margin-left:2px;">✕</span></span>
+      <span class="chip chip-32 chip-dis">Disabled <span style="font-size:11px;opacity:0.4;margin-left:2px;">✕</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- BREADCRUMBS                                                             -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="breadcrumbs">
+  <div class="section-header">
+    <div class="section-eyebrow">Components</div>
+    <h2 class="section-title">Breadcrumbs</h2>
+    <p class="section-desc">Hierarchical navigation trail. Linked ancestors use underlined medium-gray text; the current page is the final non-linked dark item.</p>
+  </div>
+
+  <div class="subsection">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div>
+        <div class="lbl" style="margin-bottom:6px;">2 items</div>
+        <div class="bc"><a class="bc-link" href="#">Home</a><span class="bc-sep">/</span><span class="bc-cur">Current page</span></div>
+      </div>
+      <div>
+        <div class="lbl" style="margin-bottom:6px;">3 items</div>
+        <div class="bc"><a class="bc-link" href="#">Home</a><span class="bc-sep">/</span><a class="bc-link" href="#">Category</a><span class="bc-sep">/</span><span class="bc-cur">Current page</span></div>
+      </div>
+      <div>
+        <div class="lbl" style="margin-bottom:6px;">With dropdown indicators</div>
+        <div class="bc"><a class="bc-link" href="#">Articles</a>&thinsp;<span class="bc-chev">▼</span><span class="bc-sep">/</span><a class="bc-link" href="#">Science</a>&thinsp;<span class="bc-chev">▼</span><span class="bc-sep">/</span><span class="bc-cur">Solar System</span></div>
+      </div>
+      <div>
+        <div class="lbl" style="margin-bottom:6px;">With overflow (···)</div>
+        <div class="bc"><a class="bc-link" href="#">Articles</a>&thinsp;<span class="bc-chev">▼</span><span class="bc-sep">/</span><span class="bc-dot">···</span><span class="bc-sep">/</span><a class="bc-link" href="#">Solar System</a>&thinsp;<span class="bc-chev">▼</span><span class="bc-sep">/</span><span class="bc-cur">Planets of our solar system</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- BANNERS                                                                 -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="banners">
+  <div class="section-header">
+    <div class="section-eyebrow">Components</div>
+    <h2 class="section-title">Banners</h2>
+    <p class="section-desc">Alert Banners for system status feedback. Marketing Banners for brand/promotional messaging.</p>
+  </div>
+
+  <div class="subsection">
+    <div class="sub-title">Alert Banner — Simple</div>
+    <div style="display:flex;flex-direction:column;gap:2px;">
+      <div class="alert" style="background:#FEC800;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3.5L21.5 20.5H2.5L12 3.5Z" stroke="#1D1D1D" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 10v5" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="17.5" r="1" fill="#1D1D1D"/></svg>
+        <span style="font-size:16px;color:#424147;flex:1;">Warning — This action requires your attention before continuing.</span>
+      </div>
+      <div class="alert" style="background:#DD3636;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="white" stroke-width="1.5"/><path d="M12 7v7" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="17" r="1" fill="white"/></svg>
+        <span style="font-size:16px;color:white;flex:1;">Error — Something went wrong. Please try again or contact support.</span>
+      </div>
+      <div class="alert" style="background:#0A6EFA;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="white" stroke-width="1.5"/><path d="M12 11v6" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="8" r="1" fill="white"/></svg>
+        <span style="font-size:16px;color:white;flex:1;">Info — New features are available. Visit the release notes to learn more.</span>
+      </div>
+      <div class="alert" style="background:#0F8670;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="white" stroke-width="1.5"/><path d="M7.5 12l3.5 3.5 5.5-6" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span style="font-size:16px;color:white;flex:1;">Success — Your changes have been saved successfully.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="sub-title">Marketing Banner — Compound · Dark tint</div>
+    <div style="display:flex;flex-direction:column;gap:2px;">
+      <!-- Blue dark -->
+      <div class="mkt mkt--compound" style="background:#0A6EFA;">
+        <svg width="88" height="88" viewBox="0 0 88 88" fill="none" style="flex-shrink:0;"><circle cx="30" cy="22" r="11" fill="rgba(0,0,0,0.15)"/><path d="M10 58c0-11 9-20 20-20s20 9 20 20" stroke="rgba(0,0,0,0.2)" stroke-width="3"/><rect x="44" y="18" width="30" height="22" rx="3" fill="rgba(0,0,0,0.12)"/><path d="M49 25h20M49 30h20M49 35h13" stroke="rgba(0,0,0,0.2)" stroke-width="2" stroke-linecap="round"/></svg>
+        <div style="flex:1;"><p style="font-family:'Georgia',serif;font-weight:700;font-size:20px;color:white;margin-bottom:8px;">A message from your Broward Administrator</p><p style="font-size:16px;color:rgba(255,255,255,0.9);margin-bottom:16px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p><span class="btn btn-polar-p btn-48">Take the survey</span></div>
+      </div>
+      <!-- Aqua dark -->
+      <div class="mkt mkt--compound" style="background:#42CAE7;">
+        <svg width="88" height="88" viewBox="0 0 88 88" fill="none" style="flex-shrink:0;"><circle cx="30" cy="22" r="11" fill="rgba(0,0,0,0.12)"/><path d="M10 58c0-11 9-20 20-20s20 9 20 20" stroke="rgba(0,0,0,0.15)" stroke-width="3"/><rect x="44" y="18" width="30" height="22" rx="3" fill="rgba(0,0,0,0.1)"/><path d="M49 25h20M49 30h20M49 35h13" stroke="rgba(0,0,0,0.18)" stroke-width="2" stroke-linecap="round"/></svg>
+        <div style="flex:1;"><p style="font-family:'Georgia',serif;font-weight:700;font-size:20px;color:#1D1D1D;margin-bottom:8px;">A message from your Broward Administrator</p><p style="font-size:16px;color:#424147;margin-bottom:16px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p><span class="btn btn-primary btn-48">Take the survey</span></div>
+      </div>
+      <!-- Bisque dark -->
+      <div class="mkt mkt--compound" style="background:#C7A475;">
+        <svg width="88" height="88" viewBox="0 0 88 88" fill="none" style="flex-shrink:0;"><circle cx="30" cy="22" r="11" fill="rgba(0,0,0,0.12)"/><path d="M10 58c0-11 9-20 20-20s20 9 20 20" stroke="rgba(0,0,0,0.15)" stroke-width="3"/><rect x="44" y="18" width="30" height="22" rx="3" fill="rgba(0,0,0,0.1)"/><path d="M49 25h20M49 30h20M49 35h13" stroke="rgba(0,0,0,0.18)" stroke-width="2" stroke-linecap="round"/></svg>
+        <div style="flex:1;"><p style="font-family:'Georgia',serif;font-weight:700;font-size:20px;color:#1D1D1D;margin-bottom:8px;">A message from your Broward Administrator</p><p style="font-size:16px;color:#424147;margin-bottom:16px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p><span class="btn btn-primary btn-48">Take the survey</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- INPUT FIELDS                                                            -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="inputs">
+  <div class="section-header">
+    <div class="section-eyebrow">Components</div>
+    <h2 class="section-title">Input Fields</h2>
+    <p class="section-desc">Text inputs with 4 states: Default, Focused, Error, and Disabled.</p>
+  </div>
+
+  <div class="subsection">
+    <div class="row">
+      <div class="col">
+        <div class="input-wrap">
+          <div class="input-label">Field label</div>
+          <div class="input-field">Placeholder text</div>
+          <div class="input-help">Helper text</div>
+        </div>
+        <span class="lbl">Default</span>
+      </div>
+      <div class="col">
+        <div class="input-wrap">
+          <div class="input-label">Field label</div>
+          <div class="input-field input-focused">Placeholder text</div>
+        </div>
+        <span class="lbl">Focused</span>
+      </div>
+      <div class="col">
+        <div class="input-wrap">
+          <div class="input-label" style="color:#DD3636;">Field label</div>
+          <div class="input-field input-error">Placeholder text</div>
+          <div class="input-err-msg">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="#DD3636" stroke-width="1.25"/><path d="M8 4.5v5" stroke="#DD3636" stroke-width="1.25" stroke-linecap="round"/><circle cx="8" cy="11.5" r="0.75" fill="#DD3636"/></svg>
+            This field is required
+          </div>
+        </div>
+        <span class="lbl">Error</span>
+      </div>
+      <div class="col">
+        <div class="input-wrap">
+          <div class="input-label" style="color:#8D8D96;">Field label</div>
+          <div class="input-field input-disabled">Placeholder text</div>
+        </div>
+        <span class="lbl">Disabled</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- SELECTION CONTROLS                                                      -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="selection">
+  <div class="section-header">
+    <div class="section-eyebrow">Components</div>
+    <h2 class="section-title">Selection Controls</h2>
+    <p class="section-desc">Checkboxes, radio buttons, and toggles for binary and multi-select inputs.</p>
+  </div>
+
+  <div class="subsection">
+    <div class="sub-title">Checkboxes</div>
+    <div class="row">
+      <div class="col"><div class="ctrl"><div class="ctrl__box"></div>Unchecked</div><span class="lbl">Unchecked</span></div>
+      <div class="col"><div class="ctrl"><div class="ctrl__box ctrl__box--on"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Checked</div><span class="lbl">Checked</span></div>
+      <div class="col"><div class="ctrl"><div class="ctrl__box ctrl__box--on"><div style="width:10px;height:2px;background:white;border-radius:1px;"></div></div>Indeterminate</div><span class="lbl">Indeterminate</span></div>
+      <div class="col"><div class="ctrl" style="color:#8D8D96;"><div class="ctrl__box ctrl__box--dis"></div>Disabled</div><span class="lbl">Disabled</span></div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="sub-title">Radio Buttons</div>
+    <div class="row">
+      <div class="col"><div class="ctrl"><div class="ctrl__circle"></div>Unselected</div><span class="lbl">Unselected</span></div>
+      <div class="col"><div class="ctrl"><div class="ctrl__circle ctrl__circle--on"><div class="ctrl__dot"></div></div>Selected</div><span class="lbl">Selected</span></div>
+      <div class="col"><div class="ctrl" style="color:#8D8D96;"><div class="ctrl__circle" style="border-color:#A8AAB0;"></div>Disabled</div><span class="lbl">Disabled</span></div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="sub-title">Toggles</div>
+    <div class="row">
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#1D1D1D;">
+          <div class="toggle-track"><div class="toggle-thumb"></div></div>Off
+        </div>
+        <span class="lbl">Off</span>
+      </div>
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#1D1D1D;">
+          <div class="toggle-track toggle-track--on"><div class="toggle-thumb toggle-thumb--on"></div></div>On
+        </div>
+        <span class="lbl">On</span>
+      </div>
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#8D8D96;">
+          <div class="toggle-track toggle-track--dis"><div class="toggle-thumb"></div></div>Disabled
+        </div>
+        <span class="lbl">Disabled</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- ACCORDION                                                               -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="accordion">
+  <div class="section-header">
+    <div class="section-eyebrow">Components</div>
+    <h2 class="section-title">Accordion</h2>
+    <p class="section-desc">Collapsible content panels for progressive disclosure. Active row has a blue inset border.</p>
+  </div>
+
+  <div class="subsection">
+    <div class="acc">
+      <div>
+        <div class="acc-hd acc-hd--active">
+          <span style="flex:1;">Day 1: August 7th, 2021</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 10.5l5-5 5 5" stroke="#424147" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="acc-body">Accordions are useful when the user only needs to see a portion of the content at any one time. They reduce cognitive load by hiding content that is not immediately relevant.</div>
+      </div>
+      <div class="acc-hd">
+        <span style="flex:1;">Day 2: August 8th, 2021</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 5.5l5 5 5-5" stroke="#424147" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="acc-hd acc-hd--dis" style="border-bottom:none;">
+        <span style="flex:1;">Day 3: August 9th, 2021 (disabled)</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 5.5l5 5 5-5" stroke="#424147" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- TABS                                                                    -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="tabs">
+  <div class="section-header">
+    <div class="section-eyebrow">Components</div>
+    <h2 class="section-title">Tabs</h2>
+    <p class="section-desc">Tab navigation for sub-pages. Active tab uses brand blue; disabled tabs are muted.</p>
+  </div>
+
+  <div class="subsection" style="max-width:480px;">
+    <div class="tabs">
+      <div class="tab tab--active">Overview</div>
+      <div class="tab">Details</div>
+      <div class="tab">Settings</div>
+      <div class="tab tab--dis">Archive</div>
+    </div>
+    <div style="padding:16px 0;font-size:14px;color:#5B5A61;">Content for: <strong style="color:#1D1D1D;">Overview</strong></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- TOASTS                                                                  -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="toasts">
+  <div class="section-header">
+    <div class="section-eyebrow">Components</div>
+    <h2 class="section-title">Toasts</h2>
+    <p class="section-desc">Transient notifications for confirmations, warnings, and errors. Available in bright and light tints.</p>
+  </div>
+
+  <div class="subsection">
+    <div class="sub-title">Bright tint</div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:24px;">
+      <div class="toast" style="background:#0A6EFA;color:white;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="white" stroke-width="1.25"/><path d="M8 7.5v4" stroke="white" stroke-width="1.25" stroke-linecap="round"/><circle cx="8" cy="5.25" r="0.75" fill="white"/></svg>
+        <span style="flex:1;">Your assignment has been updated.</span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div class="toast" style="background:#0F8670;color:white;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="white" stroke-width="1.25"/><path d="M5 8l2.5 2.5 3.5-4" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span style="flex:1;">Article assigned to all students!</span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+
+    <div class="sub-title">Light tint</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div class="toast" style="background:#FFF8D2;color:#A06A00;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2L14.5 13.5H1.5L8 2Z" stroke="#A06A00" stroke-width="1.25" stroke-linejoin="round"/><path d="M8 6v4" stroke="#A06A00" stroke-width="1.25" stroke-linecap="round"/><circle cx="8" cy="12" r="0.75" fill="#A06A00"/></svg>
+        <span style="flex:1;">This action cannot be undone.</span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="#A06A00" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div class="toast" style="background:#FFE2E2;color:#A50000;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="#A50000" stroke-width="1.25"/><path d="M8 4.5v5" stroke="#A50000" stroke-width="1.25" stroke-linecap="round"/><circle cx="8" cy="11.5" r="0.75" fill="#A50000"/></svg>
+        <span style="flex:1;">An error occurred. Please try again.</span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="#A50000" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- DIVIDERS                                                                -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="dividers">
+  <div class="section-header">
+    <div class="section-eyebrow">Components</div>
+    <h2 class="section-title">Dividers</h2>
+    <p class="section-desc">1px horizontal rules at 16% opacity. Neutral 700 on light backgrounds; White on dark backgrounds.</p>
+  </div>
+
+  <div class="subsection" style="max-width:480px;">
+    <div class="group-title">On light background</div>
+    <hr style="border:none;border-top:1px solid rgba(29,29,29,0.16);margin:16px 0 32px;">
+
+    <div class="group-title">On dark background</div>
+    <div style="background:#082C88;border-radius:6px;padding:20px;margin-top:8px;">
+      <hr style="border:none;border-top:1px solid rgba(255,255,255,0.16);margin:0;">
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- LUNA / AI ATOMS                                                         -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="luna-ai">
+  <div class="section-header" style="border-bottom-color:#691C9C;">
+    <div class="section-eyebrow" style="background:linear-gradient(102deg,#00CDF6 0%,#1088EB 25%,#1F3CD7 50%,#691C9C 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">Luna AI</div>
+    <h2 class="section-title">AI Atoms</h2>
+    <p class="section-desc">Luna AI-branded variants of core UI components. All use the Luna gradient — a 4-stop spectrum from Aqua (#00CDF6) to Purple (#691C9C). Purple border replaces the default blue border on form elements.</p>
+  </div>
+
+  <!-- AI Tags -->
+  <div class="subsection">
+    <div class="sub-title">AI Tags</div>
+    <div class="row">
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;gap:2px;padding:2px 4px;border-radius:2px;background:linear-gradient(-38.73deg,#691C9C 4.6%,#1F3CD7 66.6%,#1088EB 100%);">
+          <span style="font-size:12px;font-weight:700;color:white;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;">created by Luna&nbsp;</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L9.3 6.7L14.5 8L9.3 9.3L8 14.5L6.7 9.3L1.5 8L6.7 6.7L8 1.5Z" fill="white"/></svg>
+        </div>
+        <span class="lbl">Result tag</span>
+      </div>
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;gap:2px;padding:2px 4px;border-radius:2px;background:linear-gradient(-55.40deg,#691C9C 4.6%,#1F3CD7 66.6%,#1088EB 100%);">
+          <span style="font-size:12px;font-weight:700;color:white;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;">by luna</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L9.3 6.7L14.5 8L9.3 9.3L8 14.5L6.7 9.3L1.5 8L6.7 6.7L8 1.5Z" fill="white"/></svg>
+        </div>
+        <span class="lbl">Medium</span>
+      </div>
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;gap:2px;padding:2px 4px;border-radius:2px;background:linear-gradient(-79.64deg,#691C9C 4.6%,#1F3CD7 66.6%,#1088EB 100%);">
+          <span style="font-size:12px;font-weight:700;color:white;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;">AI</span>
+        </div>
+        <span class="lbl">Small</span>
+      </div>
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;gap:2px;padding:2px 4px;border-radius:2px;background:linear-gradient(-62.74deg,#691C9C 4.6%,#1F3CD7 66.6%,#1088EB 100%);">
+          <span style="font-size:12px;font-weight:700;color:white;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;">Luna</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L9.3 6.7L14.5 8L9.3 9.3L8 14.5L6.7 9.3L1.5 8L6.7 6.7L8 1.5Z" fill="white"/></svg>
+        </div>
+        <span class="lbl">SC Luna</span>
+      </div>
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;gap:2px;padding:2px 4px;border-radius:2px;background:linear-gradient(-39.30deg,#691C9C 4.6%,#1F3CD7 66.6%,#1088EB 100%);">
+          <span style="font-size:12px;font-weight:700;color:white;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;">leveled by Luna&nbsp;</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L9.3 6.7L14.5 8L9.3 9.3L8 14.5L6.7 9.3L1.5 8L6.7 6.7L8 1.5Z" fill="white"/></svg>
+        </div>
+        <span class="lbl">Leveled</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- AI Buttons -->
+  <div class="subsection">
+    <div class="sub-title">Buttons AI</div>
+
+    <div class="group-title">Primary</div>
+    <div class="row" style="margin-bottom:24px;">
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 16px;border-radius:8px;background:linear-gradient(-60.86deg,#691C9C 4.6%,#1F3CD7 66.6%,#1088EB 100%);border:none;">
+          <span style="font-size:16px;color:white;white-space:nowrap;">Main AI action</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L9.3 6.7L14.5 8L9.3 9.3L8 14.5L6.7 9.3L1.5 8L6.7 6.7L8 1.5Z" fill="white"/></svg>
+        </div>
+        <span class="lbl">Default · 48</span>
+      </div>
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;justify-content:center;gap:8px;height:32px;padding:0 8px;border-radius:8px;background:linear-gradient(-53.01deg,#691C9C 4.6%,#1F3CD7 66.6%,#1088EB 100%);border:none;">
+          <span style="font-size:16px;color:white;white-space:nowrap;">Main AI action</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L9.3 6.7L14.5 8L9.3 9.3L8 14.5L6.7 9.3L1.5 8L6.7 6.7L8 1.5Z" fill="white"/></svg>
+        </div>
+        <span class="lbl">Default · 32</span>
+      </div>
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;justify-content:center;gap:8px;height:24px;padding:0 8px;border-radius:8px;background:linear-gradient(-44.88deg,#691C9C 4.6%,#1F3CD7 66.6%,#1088EB 100%);border:none;">
+          <span style="font-size:14px;color:white;white-space:nowrap;">Main AI action</span>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L9.3 6.7L14.5 8L9.3 9.3L8 14.5L6.7 9.3L1.5 8L6.7 6.7L8 1.5Z" fill="white"/></svg>
+        </div>
+        <span class="lbl">Default · 24</span>
+      </div>
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 16px;border-radius:8px;background:#E1E3E5;cursor:not-allowed;">
+          <span style="font-size:16px;color:#8D8D96;white-space:nowrap;">Main AI action</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L9.3 6.7L14.5 8L9.3 9.3L8 14.5L6.7 9.3L1.5 8L6.7 6.7L8 1.5Z" fill="#A8AAB0"/></svg>
+        </div>
+        <span class="lbl">Disabled · 48</span>
+      </div>
+    </div>
+
+    <div class="group-title">Secondary</div>
+    <div class="row">
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 16px;border-radius:8px;background:white;border:1px solid #691C9C;">
+          <span style="font-size:16px;background:linear-gradient(-42.51deg,#691C9C 4.6%,#1F3CD7 66.6%,#1088EB 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;white-space:nowrap;">Main AI action</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L9.3 6.7L14.5 8L9.3 9.3L8 14.5L6.7 9.3L1.5 8L6.7 6.7L8 1.5Z" fill="#691C9C"/></svg>
+        </div>
+        <span class="lbl">Default · 48</span>
+      </div>
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;justify-content:center;gap:8px;height:32px;padding:0 8px;border-radius:8px;background:white;border:1px solid #691C9C;">
+          <span style="font-size:16px;background:linear-gradient(-42.51deg,#691C9C 4.6%,#1F3CD7 66.6%,#1088EB 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;white-space:nowrap;">Main AI action</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L9.3 6.7L14.5 8L9.3 9.3L8 14.5L6.7 9.3L1.5 8L6.7 6.7L8 1.5Z" fill="#691C9C"/></svg>
+        </div>
+        <span class="lbl">Default · 32</span>
+      </div>
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 16px;border-radius:8px;background:white;border:1px solid #E1E3E5;cursor:not-allowed;">
+          <span style="font-size:16px;color:#A8AAB0;white-space:nowrap;">Main AI action</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5L9.3 6.7L14.5 8L9.3 9.3L8 14.5L6.7 9.3L1.5 8L6.7 6.7L8 1.5Z" fill="#A8AAB0"/></svg>
+        </div>
+        <span class="lbl">Disabled · 48</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Chips AI -->
+  <div class="subsection">
+    <div class="sub-title">Filter Chips — Luna styled</div>
+    <div class="row">
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;height:32px;padding:0 8px;border-radius:100px;background:white;border:1px solid #691C9C;">
+          <span style="font-size:14px;color:#1D1D1D;white-space:nowrap;">Chip Label</span>
+        </div>
+        <span class="lbl">Default</span>
+      </div>
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;height:32px;padding:0 8px;border-radius:100px;border:1px solid #691C9C;background:linear-gradient(90deg,rgba(255,255,255,.9),rgba(255,255,255,.9)),linear-gradient(131.68deg,#00CDF6 0%,#1088EB 25%,#1F3CD7 50%,#691C9C 100%);">
+          <span style="font-size:14px;color:#1D1D1D;white-space:nowrap;">Chip Label</span>
+        </div>
+        <span class="lbl">Selected</span>
+      </div>
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;height:32px;padding:0 8px;border-radius:100px;border:2px solid #691C9C;background:linear-gradient(90deg,rgba(255,255,255,.9),rgba(255,255,255,.9)),linear-gradient(131.68deg,#00CDF6 0%,#1088EB 25%,#1F3CD7 50%,#691C9C 100%);">
+          <span style="font-size:14px;color:#1D1D1D;white-space:nowrap;">Chip Label</span>
+        </div>
+        <span class="lbl">Hit</span>
+      </div>
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;height:32px;padding:0 8px;border-radius:100px;border:1px solid #E1E3E5;background:#F0F1F2;cursor:not-allowed;">
+          <span style="font-size:14px;color:#8D8D96;white-space:nowrap;">Chip Label</span>
+        </div>
+        <span class="lbl">Disabled</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="sub-title">Input Chips — Luna styled</div>
+    <div class="row">
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;gap:4px;height:32px;padding:0 8px;border-radius:100px;background:white;border:1px solid #691C9C;">
+          <span style="font-size:14px;color:#1D1D1D;white-space:nowrap;">Input chip label</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#1D1D1D" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <span class="lbl">Default</span>
+      </div>
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;gap:4px;height:32px;padding:0 8px;border-radius:100px;border:1px solid #691C9C;background:linear-gradient(90deg,rgba(255,255,255,.9),rgba(255,255,255,.9)),linear-gradient(131.68deg,#00CDF6 0%,#1088EB 25%,#1F3CD7 50%,#691C9C 100%);">
+          <span style="font-size:14px;color:#1D1D1D;white-space:nowrap;">Input chip label</span>
+          <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7.5" fill="#691C9C"/><path d="M5.75 5.75l4.5 4.5M10.25 5.75l-4.5 4.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <span class="lbl">Selected</span>
+      </div>
+      <div class="col">
+        <div style="display:inline-flex;align-items:center;gap:4px;height:32px;padding:0 8px;border-radius:100px;border:1px solid #E1E3E5;background:#F0F1F2;cursor:not-allowed;">
+          <span style="font-size:14px;color:#8D8D96;white-space:nowrap;">Input chip label</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#8D8D96" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <span class="lbl">Disabled</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Form Inputs AI -->
+  <div class="subsection">
+    <div class="sub-title">Text Input — Luna styled</div>
+    <div class="row">
+      <div class="col">
+        <div style="display:flex;flex-direction:column;width:220px;gap:4px;">
+          <div style="display:flex;gap:4px;align-items:center;"><span style="font-size:14px;font-weight:700;color:#424147;">Field label</span><span style="font-size:14px;font-weight:700;color:#0A6EFA;">*</span></div>
+          <div style="display:flex;align-items:center;height:48px;padding:0 16px;border-radius:8px;border:1px solid #691C9C;background:white;font-size:16px;color:#77767A;">Placeholder text</div>
+        </div>
+        <span class="lbl">Default</span>
+      </div>
+      <div class="col">
+        <div style="display:flex;flex-direction:column;width:220px;gap:4px;">
+          <div style="display:flex;gap:4px;align-items:center;"><span style="font-size:14px;font-weight:700;color:#424147;">Field label</span><span style="font-size:14px;font-weight:700;color:#0A6EFA;">*</span></div>
+          <div style="display:flex;align-items:center;height:48px;padding:0 16px;border-radius:8px;border:2px solid #691C9C;background:white;font-size:16px;color:#1D1D1D;">Filled value</div>
+        </div>
+        <span class="lbl">Active</span>
+      </div>
+      <div class="col">
+        <div style="display:flex;flex-direction:column;width:220px;gap:4px;">
+          <div style="display:flex;gap:4px;align-items:center;"><span style="font-size:14px;font-weight:700;color:#424147;">Field label</span><span style="font-size:14px;font-weight:700;color:#C32113;">*</span></div>
+          <div style="display:flex;align-items:center;height:48px;padding:0 16px;border-radius:8px;border:1px solid #C32113;background:white;font-size:16px;color:#77767A;">Placeholder text</div>
+          <div style="display:flex;align-items:center;gap:4px;font-size:14px;color:#C32113;">
+            <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7.5" fill="#C32113"/><path d="M8 4.5v5" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11.25" r="0.75" fill="white"/></svg>
+            Error message
+          </div>
+        </div>
+        <span class="lbl">Error</span>
+      </div>
+      <div class="col">
+        <div style="display:flex;flex-direction:column;width:220px;gap:4px;">
+          <div style="display:flex;gap:4px;align-items:center;"><span style="font-size:14px;font-weight:700;color:#424147;">Field label</span><span style="font-size:12px;color:#5B5A61;">(read-only)</span></div>
+          <div style="display:flex;align-items:center;height:48px;padding:0 16px;border-radius:8px;border:1px solid #691C9C;background:linear-gradient(90deg,rgba(255,255,255,.9),rgba(255,255,255,.9)),linear-gradient(141.9deg,#00CDF6 0%,#1088EB 25%,#1F3CD7 50%,#691C9C 100%);font-size:16px;color:#5B5A61;">Placeholder text</div>
+        </div>
+        <span class="lbl">Read-only</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="sub-title">Combo Box — Luna styled</div>
+    <div class="row">
+      <div class="col">
+        <div style="display:flex;flex-direction:column;width:220px;gap:4px;">
+          <div style="display:flex;gap:4px;"><span style="font-size:14px;font-weight:700;color:#424147;">Field label</span><span style="font-size:14px;font-weight:700;color:#0A6EFA;">*</span></div>
+          <div style="display:flex;align-items:center;gap:8px;height:48px;padding:0 8px 0 16px;border-radius:8px;border:1px solid #691C9C;background:white;">
+            <span style="font-size:16px;color:#77767A;flex:1;overflow:hidden;white-space:nowrap;">Placeholder text</span>
+            <div style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1D1D1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+        <span class="lbl">Default</span>
+      </div>
+      <div class="col">
+        <div style="display:flex;flex-direction:column;width:220px;gap:4px;">
+          <div style="display:flex;gap:4px;"><span style="font-size:14px;font-weight:700;color:#424147;">Field label</span><span style="font-size:12px;color:#5B5A61;">(read-only)</span></div>
+          <div style="display:flex;align-items:center;gap:8px;height:48px;padding:0 8px 0 16px;border-radius:8px;border:1px solid #691C9C;background:linear-gradient(90deg,rgba(255,255,255,.9),rgba(255,255,255,.9)),linear-gradient(133.93deg,#00CDF6 0%,#1088EB 25%,#1F3CD7 50%,#691C9C 100%);">
+            <span style="font-size:16px;color:#5B5A61;flex:1;overflow:hidden;white-space:nowrap;">Placeholder text</span>
+            <div style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;flex-shrink:0;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1D1D1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+        <span class="lbl">Read-only</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <div class="sub-title">Text Area — Luna styled</div>
+    <div class="row">
+      <div class="col">
+        <div style="display:flex;flex-direction:column;width:240px;gap:4px;">
+          <span style="font-size:14px;font-weight:700;color:#424147;">Field label <span style="font-size:12px;font-weight:400;color:#5B5A61;">(optional)</span></span>
+          <div style="border:1px solid #691C9C;border-radius:8px;background:white;min-height:120px;padding:12px;font-size:16px;color:#77767A;line-height:1.5;">Placeholder text</div>
+        </div>
+        <span class="lbl">Default</span>
+      </div>
+      <div class="col">
+        <div style="display:flex;flex-direction:column;width:240px;gap:4px;">
+          <span style="font-size:14px;font-weight:700;color:#424147;">Field label <span style="font-size:12px;font-weight:400;color:#5B5A61;">(read-only)</span></span>
+          <div style="border:1px solid #691C9C;border-radius:8px;min-height:120px;padding:12px;font-size:16px;color:#5B5A61;line-height:1.5;background:linear-gradient(90deg,rgba(255,255,255,.9),rgba(255,255,255,.9)),linear-gradient(141.9deg,#00CDF6 0%,#1088EB 25%,#1F3CD7 50%,#691C9C 100%);">Placeholder text</div>
+        </div>
+        <span class="lbl">Read-only</span>
+      </div>
+      <div class="col">
+        <div style="display:flex;flex-direction:column;width:240px;gap:4px;">
+          <span style="font-size:14px;font-weight:700;color:#424147;">Field label <span style="font-size:12px;font-weight:400;color:#5B5A61;">(optional)</span></span>
+          <div style="border:1px solid #C32113;border-radius:8px;background:white;min-height:120px;padding:12px;font-size:16px;color:#77767A;line-height:1.5;">Placeholder text</div>
+          <div style="display:flex;align-items:center;gap:4px;font-size:14px;color:#C32113;">
+            <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7.5" fill="#C32113"/><path d="M8 4.5v5" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11.25" r="0.75" fill="white"/></svg>
+            Error message
+          </div>
+        </div>
+        <span class="lbl">Error</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Chat Bubbles -->
+  <div class="subsection">
+    <div class="sub-title">Chat Bubbles</div>
+    <div style="display:flex;flex-direction:column;gap:8px;max-width:340px;">
+      <div style="display:flex;align-items:flex-start;">
+        <div style="flex:1;padding:4px 8px;border-radius:2px 8px 12px 12px;border:1px solid #691C9C;background:linear-gradient(90deg,rgba(255,255,255,.9),rgba(255,255,255,.9)),linear-gradient(139.33deg,#00CDF6 0%,#1088EB 25%,#1F3CD7 50%,#691C9C 100%);">
+          <p style="font-size:16px;color:#1D1D1D;margin:0;line-height:1.5;">AI message in conversation</p>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-start;justify-content:flex-end;">
+        <div style="padding:4px 8px;border-radius:8px 2px 12px 12px;border:1px solid #3688FD;background:#CCE1FF;">
+          <p style="font-size:16px;color:#1D1D1D;margin:0;line-height:1.5;text-align:right;">Human response to the chat</p>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-start;">
+        <div style="flex:1;padding:4px 8px;border-radius:2px 8px 12px 12px;border:1px solid #691C9C;background:linear-gradient(90deg,rgba(255,255,255,.9),rgba(255,255,255,.9)),linear-gradient(139.33deg,#00CDF6 0%,#1088EB 25%,#1F3CD7 50%,#691C9C 100%);">
+          <p style="font-size:16px;color:#1D1D1D;margin:0;line-height:1.5;">Here's what I found based on your question about the solar system.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Loading -->
+  <div class="subsection">
+    <div class="sub-title">Loading Indicator — Luna gradient</div>
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-label="Loading">
+      <circle cx="32" cy="32" r="28" stroke="#E1E3E5" stroke-width="4"/>
+      <path d="M60 32C60 17.64 48.36 6 34 6" stroke="url(#lunaSpinGrad)" stroke-width="4" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="rotate" from="0 32 32" to="360 32 32" dur="1s" repeatCount="indefinite"/>
+      </path>
+      <defs>
+        <linearGradient id="lunaSpinGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#1088EB"/>
+          <stop offset="100%" stop-color="#691C9C"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+</section>
+
+</div><!-- /container -->
+
+<footer>
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+    <span><strong>Angelou Design System 2.0</strong> — Newsela · Visual reference</span>
+    <span>Open in any modern browser · No server required</span>
+  </div>
+</footer>
+
+</body>
+</html>

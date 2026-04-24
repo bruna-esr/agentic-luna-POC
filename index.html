@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Newsela · Home</title>
+  <link rel="stylesheet" href="assets/angelou/colors.css">
+  <link rel="stylesheet" href="assets/angelou/typography.css">
+  <link rel="stylesheet" href="assets/angelou/grid.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-left">
+    <button class="topnav-waffle" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="3" cy="3" r="1.5" fill="currentColor"/>
+        <circle cx="9" cy="3" r="1.5" fill="currentColor"/>
+        <circle cx="15" cy="3" r="1.5" fill="currentColor"/>
+        <circle cx="3" cy="9" r="1.5" fill="currentColor"/>
+        <circle cx="9" cy="9" r="1.5" fill="currentColor"/>
+        <circle cx="15" cy="9" r="1.5" fill="currentColor"/>
+        <circle cx="3" cy="15" r="1.5" fill="currentColor"/>
+        <circle cx="9" cy="15" r="1.5" fill="currentColor"/>
+        <circle cx="15" cy="15" r="1.5" fill="currentColor"/>
+      </svg>
+    </button>
+    <a href="index.html" class="brand"><img src="assets/img/newsela-logo.svg" alt="Newsela" /></a>
+  </div>
+  <div class="topnav-search">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <span>Search for texts and more</span>
+  </div>
+  <div class="nav-links">
+    <a class="nav-link">ELA</a>
+    <a class="nav-link">Social Studies</a>
+    <a class="nav-link">Science</a>
+    <a class="nav-link nav-link--caret">Content library <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="nav-link nav-link--caret">Classes <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="nav-link">Assignments</a>
+  </div>
+  <div class="nav-right">
+    <div class="topnav-profile">
+      <div class="topnav-avatar">CM</div>
+      <span class="topnav-subjects">ELA / SS / SCI</span>
+      <svg class="topnav-profile-chevron" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <button class="topnav-help" aria-label="Help">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <!-- ── Hero card ── -->
+  <div class="hero-card">
+    <div class="hero-deco">
+      <img src="assets/img/astronaut.png" alt="" class="astronaut" />
+    </div>
+    <div class="hero-body">
+      <div class="greeting">Good morning, Mrs. Cat Meow</div>
+      <div class="hero-input-col">
+        <h1>What are you teaching this week?</h1>
+        <div class="luna-input">
+          <textarea id="hero-input" placeholder="Build a text set of 5 articles exploring 'Human Impact on Ecosystems' for a 5th-grade science unit. Include diverse perspectives, such as urban planning and wildlife conservation."></textarea>
+          <div class="input-footer">
+            <div class="suggestion-chips">
+              <button class="chip" data-chip-prompt="Find me an article about firefighters for my 2nd grade community helpers unit">&ldquo;Find me an article about firefighters...&rdquo;</button>
+              <button class="chip" data-chip-prompt="RL.4.5 resources on poems, drama and prose for 4th grade ELA">&ldquo;RL.4.5 — poems, drama and prose...&rdquo;</button>
+              <button class="chip" data-chip-prompt="I need a video about the water cycle for 3rd grade science">&ldquo;I need a video about the water cycle...&rdquo;</button>
+            </div>
+            <button class="luna-submit" id="hero-submit" aria-label="Send">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="capability-cards">
+      <button class="capability-card" data-capability="lesson-planner">
+        <div class="cap-top">
+          <div class="cap-badge">
+            <svg class="cap-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span class="cap-label">LESSON PLANNER</span>
+          </div>
+          <svg class="cap-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="cap-desc">Turn any article into a complete classroom session in seconds!</div>
+      </button>
+
+      <button class="capability-card" data-capability="text-set">
+        <div class="cap-top">
+          <div class="cap-badge">
+            <svg class="cap-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+            <span class="cap-label">TEXT SET BUILDER</span>
+          </div>
+          <svg class="cap-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="cap-desc">Gather relevant content around a central theme or specific standard.</div>
+      </button>
+
+      <button class="capability-card" data-capability="text-leveler">
+        <div class="cap-top">
+          <div class="cap-badge">
+            <svg class="cap-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <span class="cap-label">TEXT LEVELER</span>
+          </div>
+          <svg class="cap-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="cap-desc">Quickly connect complicated text to what students can actually read.</div>
+      </button>
+    </div>
+  </div>
+
+  <!-- ── Page split ── -->
+  <div class="page-split">
+
+    <!-- Left column -->
+    <div class="articles-col">
+
+      <!-- Secondary navigation pills -->
+      <div class="secondary-tabs">
+        <div class="sec-tab"><span>TRENDING THIS WEEK</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        <div class="sec-tab"><span>LATEST NEWS</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        <div class="sec-tab"><span>RECOMMENDED FOR YOU</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        <div class="sec-tab"><span>MY COLLECTIONS</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </div>
+
+      <!-- Latest News content card -->
+      <div class="content-card">
+        <div class="c-tabs-row">
+          <button class="c-tab active">Latest News</button>
+          <button class="c-tab">Recommended for you</button>
+          <button class="c-tab">Promoted at your district</button>
+        </div>
+        <div class="article-grid">
+          <div class="article-card">
+            <div class="thumb">
+              <div class="thumb-img" style="background-image:linear-gradient(135deg,#bcd8ff,#e8d8ff);"></div>
+              <span class="category-chip">News</span>
+              <button class="bookmark-btn" aria-label="Bookmark">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-date">Oct 10, 2024</div>
+              <h3 class="card-title">Who is Pesto the penguin and why does everyone love him?</h3>
+              <div class="card-reading">Maturity level: 5th-12th &nbsp;·&nbsp; Reading: 700-900L</div>
+            </div>
+            <div class="card-cta">
+              <button class="cta-btn">Add to...</button>
+              <button class="cta-btn">Assign</button>
+            </div>
+          </div>
+
+          <div class="article-card">
+            <div class="thumb">
+              <div class="thumb-img" style="background-image:linear-gradient(135deg,#d3e3ff,#f6e8ff);"></div>
+              <span class="category-chip">News</span>
+              <button class="bookmark-btn" aria-label="Bookmark">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-date">Oct 10, 2024</div>
+              <h3 class="card-title">Why do dogs wag their tails? Humans liked the answer.</h3>
+              <div class="card-reading">Maturity level: 5th-12th &nbsp;·&nbsp; Reading: 700-900L</div>
+            </div>
+            <div class="card-cta">
+              <button class="cta-btn">Add to...</button>
+              <button class="cta-btn">Assign</button>
+            </div>
+          </div>
+
+          <div class="article-card">
+            <div class="thumb">
+              <div class="thumb-img" style="background-image:linear-gradient(135deg,#f5ddf3,#ffd8c8);"></div>
+              <span class="category-chip">News</span>
+              <button class="bookmark-btn" aria-label="Bookmark">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-date">Jul 30, 2020</div>
+              <h3 class="card-title">Butterflies in the U.S. are disappearing at a 'catastrophic' rate</h3>
+              <div class="card-reading">Maturity level: 5th-12th &nbsp;·&nbsp; Reading: 700-900L</div>
+            </div>
+            <div class="card-cta">
+              <button class="cta-btn">Add to...</button>
+              <button class="cta-btn">Assign</button>
+            </div>
+          </div>
+
+          <div class="article-card">
+            <div class="thumb">
+              <div class="thumb-img" style="background-image:linear-gradient(135deg,#c2e4ff,#c0d0ff);"></div>
+              <span class="category-chip">News</span>
+              <button class="bookmark-btn" aria-label="Bookmark">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-date">Jul 30, 2020</div>
+              <h3 class="card-title">For the most remote place on Earth, scientists seek answers underwater</h3>
+              <div class="card-reading">Maturity level: 5th-12th &nbsp;·&nbsp; Reading: 700-900L</div>
+            </div>
+            <div class="card-cta">
+              <button class="cta-btn">Add to...</button>
+              <button class="cta-btn">Assign</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured content card -->
+      <div class="content-card">
+        <div class="c-tabs-row">
+          <button class="c-tab active">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Featured ELA
+          </button>
+          <button class="c-tab">Featured Social Studies</button>
+          <button class="c-tab">Featured STEM</button>
+        </div>
+        <p class="featured-desc">With your Newsela ELA subscription, you have full access to our ELA content, including articles, videos, text sets, lessons, collections, and more. Explore today's recommended content and visit the ELA page to discover everything Newsela ELA has to offer!</p>
+        <div class="article-grid">
+          <div class="article-card">
+            <div class="thumb">
+              <div class="thumb-img" style="background-image:linear-gradient(135deg,#ffdfc0,#ffb3a3);"></div>
+              <span class="category-chip">ELA</span>
+              <button class="bookmark-btn" aria-label="Bookmark">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-date">Oct 8, 2026</div>
+              <h3 class="card-title">How a college instructor uses typewriters to teach life lessons</h3>
+              <div class="card-reading">Maturity level: 5th-12th &nbsp;·&nbsp; Reading: 700-900L</div>
+            </div>
+            <div class="card-cta">
+              <button class="cta-btn">Add to...</button>
+              <button class="cta-btn">Assign</button>
+            </div>
+          </div>
+
+          <div class="article-card">
+            <div class="thumb">
+              <div class="thumb-img" style="background-image:linear-gradient(135deg,#c2e4ff,#c0d0ff);"></div>
+              <span class="category-chip">ELA</span>
+              <button class="bookmark-btn" aria-label="Bookmark">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-date">Oct 8, 2026</div>
+              <h3 class="card-title">After a decade as a Yale hospital janitor, he is now a doctor there</h3>
+              <div class="card-reading">Maturity level: 5th-12th &nbsp;·&nbsp; Reading: 700-900L</div>
+            </div>
+            <div class="card-cta">
+              <button class="cta-btn">Add to...</button>
+              <button class="cta-btn">Assign</button>
+            </div>
+          </div>
+
+          <div class="article-card">
+            <div class="thumb">
+              <div class="thumb-img" style="background-image:linear-gradient(135deg,#d0d8ff,#f1c7ff);"></div>
+              <span class="category-chip">ELA</span>
+              <button class="bookmark-btn" aria-label="Bookmark">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-date">Oct 8, 2026</div>
+              <h3 class="card-title">Ancient pottery shows how people made art 6,000 years ago</h3>
+              <div class="card-reading">Maturity level: 5th-12th &nbsp;·&nbsp; Reading: 700-900L</div>
+            </div>
+            <div class="card-cta">
+              <button class="cta-btn">Add to...</button>
+              <button class="cta-btn">Assign</button>
+            </div>
+          </div>
+
+          <div class="article-card">
+            <div class="thumb">
+              <div class="thumb-img" style="background-image:linear-gradient(135deg,#d9f0e8,#b8e8d0);"></div>
+              <span class="category-chip">ELA</span>
+              <button class="bookmark-btn" aria-label="Bookmark">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="card-date">Oct 7, 2026</div>
+              <h3 class="card-title">Nine-year-old sets up lemonade stand, offers free drinks to veterans</h3>
+              <div class="card-reading">Maturity level: 3rd-8th &nbsp;·&nbsp; Reading: 500-700L</div>
+            </div>
+            <div class="card-cta">
+              <button class="cta-btn">Add to...</button>
+              <button class="cta-btn">Assign</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /articles-col -->
+
+    <!-- Right sidebar -->
+    <aside class="sidebar">
+
+      <!-- At a glance -->
+      <div class="sidebar-card">
+        <div class="sc-header">
+          <h3 class="sc-title">At a glance</h3>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="stat-num warn">13</span>
+            <span class="stat-label">Students haven't submitted</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num ok">66</span>
+            <span class="stat-label">Submissions received</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num danger">02</span>
+            <span class="stat-label">Deadlines today</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">03</span>
+            <span class="stat-label">Active assignments</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Assigned -->
+      <div class="sidebar-card">
+        <div class="sc-header">
+          <h3 class="sc-title">Assigned</h3>
+          <a class="sc-more" href="#">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <div class="assigned-list">
+          <div class="assigned-item">
+            <div class="ai-thumb" style="background:linear-gradient(135deg,#d9eaff,#e8d8ff);"></div>
+            <div class="ai-body">
+              <div class="ai-title-row">
+                <span class="ai-title">To Build A Fire</span>
+                <span class="completed-chip">COMPLETED</span>
+              </div>
+              <div class="ai-meta">6th Grade Science</div>
+              <div class="ai-date">Assigned May 20 at 2:32 PM GMT - 3</div>
+            </div>
+          </div>
+          <div class="assigned-item">
+            <div class="ai-thumb" style="background:linear-gradient(135deg,#ffd8c0,#ffc2b8);"></div>
+            <div class="ai-body">
+              <div class="ai-title-row">
+                <span class="ai-title">The Giver</span>
+                <span class="grade-chip">15/90</span>
+              </div>
+              <div class="ai-meta">7th Grade Language Arts</div>
+              <div class="ai-date">Assigned June 15 at 9:45 AM GMT - 3</div>
+            </div>
+          </div>
+          <div class="assigned-item">
+            <div class="ai-thumb" style="background:linear-gradient(135deg,#c8e8d8,#b0d4f0);"></div>
+            <div class="ai-body">
+              <div class="ai-title-row">
+                <span class="ai-title">Pride and Prejudice</span>
+                <span class="grade-chip">10/50</span>
+              </div>
+              <div class="ai-meta">8th Grade Literature</div>
+              <div class="ai-date">Assigned July 1 at 1:15 PM GMT - 3</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Learning Resources -->
+      <a class="sidebar-card plr-link" href="#">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <span>Professional Learning Resources</span>
+        <svg class="plr-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+
+      <!-- Continue where you left off -->
+      <div class="sidebar-card continue-card">
+        <h3 class="sc-title">Continue where you left off</h3>
+        <div class="last-activity">Last activity · 2 hours ago</div>
+        <div class="continue-list">
+          <a class="continue-item article-item" href="#">
+            <div class="ci-content">
+              <div class="ci-eyebrow">ARTICLE · OPENED</div>
+              <div class="ci-title">How Rising Temperatures are Affecting Crop Yields</div>
+              <div class="ci-meta">Science 6 Block A | LV 4 - 5</div>
+            </div>
+            <svg class="ci-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a class="continue-item assignment-item" href="#">
+            <div class="ci-content">
+              <div class="ci-eyebrow">ASSIGNMENT · DRAFT IN WRITING</div>
+              <div class="ci-title">The Causes and Effects of Climate Change</div>
+              <div class="ci-meta">U.S. History 8 — Period 1</div>
+            </div>
+            <svg class="ci-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-card" style="font-size:12px; color:var(--nw-text-muted);">
+        <h3 style="color:var(--nw-purple); margin:0 0 8px; font-size:13px;">Demo navigation</h3>
+        <p style="margin:0 0 8px;">Try the v2 intent-routing homepage:</p>
+        <a href="v2.html" style="color:var(--nw-blue); font-weight:600;">→ Open v2 homepage</a>
+        <p style="margin:12px 0 8px;">Try the v3 MVP homepage:</p>
+        <a href="v3.html" style="color:var(--nw-blue); font-weight:600;">→ Open v3 homepage</a>
+      </div>
+
+    </aside>
+  </div><!-- /page-split -->
+
+</div><!-- /page-wrapper -->
+
+<script src="assets/app.js"></script>
+<script>initHomepageV4();</script>
+</body>
+</html>

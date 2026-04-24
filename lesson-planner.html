@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesson Planner · Newsela</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="brand"></div>
+  <div class="search">Search for articles, standards, videos, lessons</div>
+  <div class="nav-links">
+    <a href="index.html">← Home</a>
+    <a>Content library</a>
+    <a>My classes</a>
+  </div>
+  <div class="avatar">CM</div>
+</nav>
+
+<div class="stub-page">
+  <div class="stub-breadcrumb"><a href="index.html">Home</a> / Lesson Planner</div>
+
+  <div id="routed-banner" class="stub-panel routed-from" style="display:none;margin-bottom:16px;">
+    <strong>Luna routed you here</strong> based on your prompt:
+    <em id="routed-prompt" style="display:block;margin-top:4px;"></em>
+  </div>
+
+  <div class="stub-panel">
+    <h1><span style="background:linear-gradient(135deg,#6b3fd4,#1a6bff);color:white;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:0.04em;">LUNA</span> Apply to your lesson</h1>
+    <p class="sub">Review AI-generated suggestions for lesson content and inspiration.</p>
+
+    <div class="lp-tabs" style="margin-bottom: 24px;">
+      <button class="lp-tab active">Lesson planner <span class="new-chip">NEW</span></button>
+      <button class="lp-tab">Main idea</button>
+      <button class="lp-tab">Key terms</button>
+      <button class="lp-tab">Before reading activity</button>
+      <button class="lp-tab">Discussion questions</button>
+    </div>
+
+    <div class="form-row">
+      <label>Learning objective <span class="required">*</span></label>
+      <textarea id="obj-input" placeholder="In this lesson I want my students to…"></textarea>
+    </div>
+
+    <div class="form-row">
+      <label>Standards <span class="required">*</span></label>
+      <p style="font-size:12px;color:var(--nw-text-muted);margin:0 0 6px;">Select up to 3 standards you want to apply to this lesson.</p>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+        <span class="standard-chip" style="background:var(--nw-lavender);">NGSS 5-LS1-1 ×</span>
+        <span class="standard-chip" style="background:var(--nw-lavender);">CCSS.RI.5.2 ×</span>
+        <span class="standard-chip" style="background:var(--nw-lavender);">CCSS.RI.5.3 ×</span>
+        <button style="background:white;border:1.5px solid var(--nw-blue);color:var(--nw-blue);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;">Add standards +</button>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Supporting materials <span style="font-weight:400;color:var(--nw-text-muted);">(optional)</span></label>
+      <div class="toggle-row"><div class="toggle"></div>Include project idea</div>
+      <div class="toggle-row on"><div class="toggle"></div>Include supports for Multilingual Learners</div>
+    </div>
+
+    <div class="form-row">
+      <label>Allotted time <span style="font-weight:400;color:var(--nw-text-muted);">(optional)</span></label>
+      <p style="font-size:12px;color:var(--nw-text-muted);margin:0 0 8px;">Select how long you want the lesson to last</p>
+      <div class="time-options">
+        <button class="time-opt">30 min</button>
+        <button class="time-opt active">45 min</button>
+        <button class="time-opt">60 min</button>
+        <button class="time-opt">90 min</button>
+      </div>
+    </div>
+
+    <div style="text-align:right;">
+      <button class="primary-btn" onclick="window.location.href='luna.html?prompt='+encodeURIComponent(document.getElementById('obj-input').value || 'Generate my lesson plan')">Generate lesson plan ✨</button>
+    </div>
+  </div>
+
+  <p style="text-align:center;margin-top:22px;font-size:12px;color:var(--nw-text-muted);">
+    Stub screen for demo. In production this form is prefilled from your Luna prompt.
+  </p>
+</div>
+
+<script>
+(function(){
+  var p = new URLSearchParams(location.search).get('prompt');
+  var from = new URLSearchParams(location.search).get('from');
+  if (p) {
+    document.getElementById('obj-input').value = p;
+    if (from === 'v2') {
+      var banner = document.getElementById('routed-banner');
+      document.getElementById('routed-prompt').textContent = '"' + p + '"';
+      banner.style.display = 'block';
+    }
+  }
+})();
+</script>
+</body>
+</html>
