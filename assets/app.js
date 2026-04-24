@@ -234,6 +234,14 @@
             lexile: '430L', wordCount: 325, standards: ['RI.2.1','RI.2.3'], keywords: ['training','teamwork','firefighter'],
             summary: 'A close look at the training firefighters go through and the teamwork that makes every rescue possible.',
             excerpt: 'Becoming a firefighter takes months of training. New firefighters learn how to use hoses, climb ladders, and care for people who are hurt. They practice together as a team because every fire is different. During an emergency, one firefighter cannot do the job alone. They rely on each other to stay safe and help the people who need them.' },
+          { id: 's-9', type: 'article', typeLabel: 'Article', title: 'How firefighters use technology to fight fires', length: '4 min read', grade: 'Gr 2', gradient: ['#c7efd1','#d9eaff'],
+            lexile: '440L', wordCount: 295, standards: ['RI.2.1','RI.2.3'], keywords: ['technology','tools','firefighter'],
+            summary: 'From thermal cameras to computer-aided dispatch, a look at the modern tools firefighters rely on.',
+            excerpt: 'Firefighters today use more technology than ever before. A thermal camera can see through smoke to find people who are trapped. A computer inside the truck shows the fastest route to the fire. And a radio keeps the whole team connected at every step of the rescue.' },
+          { id: 's-10', type: 'article', typeLabel: 'Article', title: 'Women in firefighting: breaking barriers on the job', length: '4 min read', grade: 'Gr 2', gradient: ['#f5ddf3','#bcd8ff'],
+            lexile: '415L', wordCount: 300, standards: ['RI.2.1','RI.2.3'], keywords: ['women','careers','firefighter'],
+            summary: 'Meet some of the women who have joined fire departments and are changing what it means to be a firefighter.',
+            excerpt: 'For a long time, most firefighters were men. But that is changing. Today, women all over the country are becoming firefighters. They go through the same tough training, carry the same heavy equipment, and respond to the same emergencies. Many say they chose the job because they wanted to help their community and make a difference every single day.' },
           { id: 's-7', type: 'video',   typeLabel: 'Video',   title: 'Inside a fire engine: the trucks that save lives', length: '2 min watch', grade: 'Gr 2', gradient: ['#e8d8ff','#ffd8c8'],
             lexile: 'N/A', wordCount: null, standards: ['SL.2.2','RI.2.3'], keywords: ['fire engine','equipment','vehicles'],
             summary: 'A guided tour inside a fire engine — from the hoses and ladders to the computer that helps the team find an emergency.',
@@ -697,7 +705,7 @@
           streamText(textEl, reply, 14, function () {
             if (isV4 || isV3) {
               setPanelMode('materials');
-              artTitle.innerHTML = '<span class="luna-badge">LUNA ✦</span> Supporting materials';
+              artTitle.textContent = 'Supporting materials';
               artSub.textContent = 'Choose what to create for your lesson.';
               artBody.innerHTML = buildSelectedContentSection();
               wireStackMenus(artBody);
@@ -855,46 +863,6 @@
               '</div>' +
             '</div>' +
           '</div>' +
-          '<div class="v3-option" data-support="quiz">' +
-            '<div class="v3-option-header">' +
-              '<span class="v3-check"></span>' +
-              '<span class="v3-icon">📝</span>' +
-              '<span class="v3-option-info">' +
-                '<span class="v3-option-title">Comprehension quiz</span>' +
-                '<span class="v3-option-desc">Auto-generated multiple choice questions</span>' +
-              '</span>' +
-            '</div>' +
-          '</div>' +
-          '<div class="v3-option" data-support="discussion">' +
-            '<div class="v3-option-header">' +
-              '<span class="v3-check"></span>' +
-              '<span class="v3-icon">💬</span>' +
-              '<span class="v3-option-info">' +
-                '<span class="v3-option-title">Discussion questions</span>' +
-                '<span class="v3-option-desc">Prompts to spark classroom conversation</span>' +
-              '</span>' +
-            '</div>' +
-          '</div>' +
-          '<div class="v3-option" data-support="vocab">' +
-            '<div class="v3-option-header">' +
-              '<span class="v3-check"></span>' +
-              '<span class="v3-icon">📖</span>' +
-              '<span class="v3-option-info">' +
-                '<span class="v3-option-title">Vocabulary list</span>' +
-                '<span class="v3-option-desc">Key terms with definitions from the text</span>' +
-              '</span>' +
-            '</div>' +
-          '</div>' +
-          '<div class="v3-option" data-support="writing">' +
-            '<div class="v3-option-header">' +
-              '<span class="v3-check"></span>' +
-              '<span class="v3-icon">✍️</span>' +
-              '<span class="v3-option-info">' +
-                '<span class="v3-option-title">Writing prompt</span>' +
-                '<span class="v3-option-desc">Text-based writing task with a clear structure</span>' +
-              '</span>' +
-            '</div>' +
-          '</div>' +
         '</div>' +
         '<div class="support-footer">' +
           '<button class="primary-btn generate-btn">Generate materials →</button>' +
@@ -949,14 +917,8 @@
         const goEl = wrap.querySelector('[data-support="go"]');
         state.supports.lessonPlan = lpEl.classList.contains('selected');
         state.supports.go = goEl.classList.contains('selected');
-        state.supports.quiz = wrap.querySelector('[data-support="quiz"]').classList.contains('selected');
-        state.supports.discussion = wrap.querySelector('[data-support="discussion"]').classList.contains('selected');
-        state.supports.vocab = wrap.querySelector('[data-support="vocab"]').classList.contains('selected');
-        state.supports.writing = wrap.querySelector('[data-support="writing"]').classList.contains('selected');
 
-        const anySelected = state.supports.lessonPlan || state.supports.go ||
-          state.supports.quiz || state.supports.discussion ||
-          state.supports.vocab || state.supports.writing;
+        const anySelected = state.supports.lessonPlan || state.supports.go;
         if (!anySelected) {
           showPickerError(wrap, 'Pick at least one material to continue.');
           return;
@@ -999,10 +961,6 @@
             ? 'graphic organizer (' + labels[0] + ')'
             : labels.length + ' graphic organizers (' + labels.join(', ') + ')');
         }
-        if (state.supports.quiz) chosen.push('comprehension quiz');
-        if (state.supports.discussion) chosen.push('discussion questions');
-        if (state.supports.vocab) chosen.push('vocabulary list');
-        if (state.supports.writing) chosen.push('writing prompt');
 
         wrap.classList.add('locked');
         genBtn.innerHTML = 'Generating ✓';
@@ -1180,6 +1138,56 @@
     // ============================================================
     // Generation — thinking + stacked artifact panel
     // ============================================================
+    function showPanelGenerating(steps) {
+      shell.classList.add('with-artifact');
+      artTitle.textContent = 'Generating materials…';
+      artSub.textContent = 'This will only take a moment';
+      artActions.innerHTML = '';
+
+      const skeletonHtml =
+        '<div class="panel-skel-card">' +
+          '<div class="skel-line" style="height:12px;width:55%;"></div>' +
+          '<div class="skel-line" style="height:10px;width:80%;"></div>' +
+          '<div class="skel-line" style="height:10px;width:65%;"></div>' +
+        '</div>' +
+        '<div class="panel-skel-card">' +
+          '<div class="skel-line" style="height:12px;width:45%;"></div>' +
+          '<div class="skel-line" style="height:10px;width:75%;"></div>' +
+        '</div>';
+
+      const stepsHtml = steps.map(function (s) {
+        return '<div class="panel-gen-step">' +
+          '<div class="panel-gen-step-dot"></div>' +
+          '<span>' + s + '</span>' +
+        '</div>';
+      }).join('');
+
+      artBody.innerHTML =
+        '<div class="panel-generating">' +
+          '<div class="panel-gen-header">' +
+            '<div class="panel-gen-spinner">' +
+              '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>' +
+            '</div>' +
+            '<div>' +
+              '<div class="panel-gen-title">Generating your materials…</div>' +
+              '<div class="panel-gen-sub">Luna is crafting your lesson resources</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="panel-gen-steps">' + stepsHtml + '</div>' +
+          '<div class="panel-gen-skeletons">' + skeletonHtml + '</div>' +
+        '</div>';
+
+      // Animate steps in sequence
+      const stepEls = artBody.querySelectorAll('.panel-gen-step');
+      stepEls.forEach(function (el, i) {
+        setTimeout(function () {
+          el.classList.add('visible', 'active');
+          if (i > 0) stepEls[i - 1].classList.remove('active');
+          if (i > 0) stepEls[i - 1].classList.add('done');
+        }, i * 900);
+      });
+    }
+
     function runGeneration() {
       const lunaEl = addLunaMessage();
       const stepsEl = lunaEl.querySelector('.thinking-steps');
@@ -1187,22 +1195,33 @@
 
       const steps = ['Aligning to CCSS ELA standards for ' + (state.grade || '2nd') + ' grade…'];
       if (state.supports.lessonPlan) steps.push('Drafting learning objective and activities…');
-      if (state.supports.quiz) steps.push('Generating comprehension quiz…');
       if (state.supports.go) {
         const goCount = isV3 ? state.goTypes.length : 1;
         steps.push('Building ' + (goCount > 1 ? goCount + ' graphic organizer layouts…' : 'graphic organizer layout…'));
       }
       steps.push('Assembling your materials…');
 
+      showPanelGenerating(steps);
+
       runSteps(stepsEl, steps, function () {
         let count = 0;
         if (state.supports.lessonPlan) count += 1;
-        if (state.supports.quiz) count += 1;
         if (state.supports.go) count += isV3 ? state.goTypes.length : 1;
         const reply = "Your materials are ready — I've opened " + count + " supporting material" + (count === 1 ? '' : 's') +
           " in the side panel alongside your selected content. You can edit, print, or assign from there.";
+        // Mark all panel steps done before swapping in real content
+        artBody.querySelectorAll('.panel-gen-step').forEach(function (el) {
+          el.classList.add('visible', 'done');
+          el.classList.remove('active');
+        });
         streamText(textEl, reply, 14, function () {
           openStackedArtifact();
+          setTimeout(function () {
+            var followUp = addLunaMessage();
+            streamText(followUp.querySelector('.text'), 'Let me know if there are other classes you need to prepare for.', 18, function () {
+              scrollToBottom();
+            });
+          }, 600);
         });
       });
     }
@@ -1215,7 +1234,7 @@
       const titleText = state.flow === 'bundle'
         ? 'Community Helpers Resources'
         : tDisplay + ' Materials';
-      artTitle.innerHTML = '<span class="luna-badge">LUNA</span> ' + titleText;
+      artTitle.textContent = titleText;
       artSub.textContent = (state.grade || '2nd') + ' grade ELA · AI-generated materials';
 
       let html = '';
@@ -1292,12 +1311,6 @@
           '<p class="preview-summary">' + item.summary + '</p>' +
         '</div>' +
 
-        '<div class="preview-section">' +
-          '<div class="preview-label">' + (item.type === 'video' ? 'Video overview' : 'Opening passage') + '</div>' +
-          '<div class="preview-excerpt">' + item.excerpt + '</div>' +
-          '<div class="preview-read-more">' + wordInfo + 'Full ' + (item.type === 'video' ? 'video' : 'article') + ' available after selection</div>' +
-        '</div>' +
-
         '<div class="preview-meta-grid">' +
           '<div>' +
             '<div class="preview-label">Standards alignment</div>' +
@@ -1307,12 +1320,19 @@
             '<div class="preview-label">Keywords</div>' +
             '<div class="chip-row">' + kwChips + '</div>' +
           '</div>' +
+        '</div>' +
+
+        '<div class="preview-section">' +
+          '<div class="preview-label">' + (item.type === 'video' ? 'Video overview' : 'Opening passage') + '</div>' +
+          '<div class="preview-excerpt">' + item.excerpt + '</div>' +
+          '<div class="preview-read-more">' + wordInfo + 'Full ' + (item.type === 'video' ? 'video' : 'article') + ' available after selection</div>' +
         '</div>';
 
       // Contextual footer action
       const isSelected = isItemSelectedInPicker(item.id);
       let actionsHtml = '';
 
+      const openTabBtn = '<a class="ghost-btn" href="https://newsela.com" target="_blank" rel="noopener" style="text-decoration:none;">Open content in new tab ↗</a>';
       if (state.flow === 'bundle') {
         if (isSelected) {
           actionsHtml =
@@ -1324,7 +1344,7 @@
       } else {
         actionsHtml = '<button class="primary" data-action="use">Use this ' + (item.type === 'video' ? 'video' : 'article') + ' →</button>';
       }
-      pmFooter.innerHTML = actionsHtml;
+      pmFooter.innerHTML = openTabBtn + actionsHtml;
 
       const addBtn = pmFooter.querySelector('[data-action="add"]');
       const removeBtn = pmFooter.querySelector('[data-action="remove"]');
@@ -1451,9 +1471,11 @@
       const standards = isV3 && state.standards.length
         ? state.standards.map(function (s) { return 'CCSS.ELA-LITERACY.' + s; })
         : defaultStandards;
-      const standardsHtml = standards.map(function (s) {
-        return '<span class="standard-chip">' + s + '</span>';
-      }).join('');
+      const standardsHtml = '<div class="standards-chips">' +
+        standards.map(function (s) {
+          return '<span class="standard-chip">' + s + '</span>';
+        }).join('') +
+        '</div>';
       const timeSuffix = isV3 ? ' · ' + state.allottedTime : '';
       return '<div class="stack-section">' +
         '<div class="stack-head">' +
@@ -1723,12 +1745,20 @@
     // ============================================================
     // Helpers
     // ============================================================
+    function lastMsgSender() {
+      const msgs = stream.querySelectorAll('.msg');
+      if (!msgs.length) return null;
+      const last = msgs[msgs.length - 1];
+      return last.classList.contains('luna') ? 'luna' : 'user';
+    }
+
     function addUserMessage(text) {
       const el = document.createElement('div');
-      el.className = 'msg user';
+      const consecutive = lastMsgSender() === 'user';
+      el.className = 'msg user' + (consecutive ? ' consecutive' : '');
       el.innerHTML =
-        '<div class="avatar">CM</div>' +
-        '<div class="body"><div class="name">You</div>' +
+        (consecutive ? '' : '<div class="avatar">CM</div>') +
+        '<div class="body">' + (consecutive ? '' : '<div class="name">You</div>') +
         '<div>' + escapeHtml(text) + '</div></div>';
       stream.appendChild(el);
       scrollToBottom();
@@ -1736,10 +1766,11 @@
 
     function addLunaMessage() {
       const el = document.createElement('div');
-      el.className = 'msg luna';
+      const consecutive = lastMsgSender() === 'luna';
+      el.className = 'msg luna' + (consecutive ? ' consecutive' : '');
       el.innerHTML =
-        '<div class="avatar">L</div>' +
-        '<div class="body"><div class="name">Luna</div>' +
+        (consecutive ? '' : '<div class="avatar">L</div>') +
+        '<div class="body">' + (consecutive ? '' : '<div class="name">Luna</div>') +
         '<div class="thinking-steps"></div>' +
         '<div class="text"></div>' +
         '</div>';
