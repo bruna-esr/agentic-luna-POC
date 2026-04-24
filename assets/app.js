@@ -333,6 +333,47 @@
             summary: 'Follow a single snowflake from the cloud to the ground — and all the way back up again.',
             excerpt: 'Not all precipitation is rain. This 3-minute video follows a single snowflake as it forms high in a cold cloud, drifts to the ground, melts in the spring sun, and begins the journey all over again.' }
         ]
+      },
+      mayflower: {
+        defaultGrade: '7th',
+        shortTitle: 'The Mayflower Voyage',
+        topicLabel: 'the Mayflower voyage',
+        searchSource: 'Newsela social studies library',
+        resultsNoun: 'articles and videos',
+        items: [
+          { id: 'm-1', type: 'article', typeLabel: 'Article', title: "The Mayflower's 66-day voyage: 102 passengers cross the Atlantic", length: '5 min read', grade: 'Gr 7', gradient: ['#bcd8ff','#d9eaff'],
+            lexile: '950L', wordCount: 540, standards: ['RI.7.1','RI.7.3'], keywords: ['Mayflower','voyage','Atlantic','1620'],
+            summary: 'A look at the 1620 voyage of the Mayflower — the route, the timeline, and the storms that nearly turned the ship back to England.',
+            excerpt: 'In September 1620, a small merchant ship called the Mayflower set sail from Plymouth, England, bound for the New World. On board were 102 passengers — about half of them Separatists, members of a religious group seeking the freedom to practice their faith. The voyage was supposed to take roughly two months. Instead, it stretched to 66 grueling days at sea, plagued by storms, leaks, and seasickness. By the time the ship sighted land off Cape Cod in November, it was already too late in the year to plant crops.' },
+          { id: 'm-2', type: 'article', typeLabel: 'Article', title: 'Who were the Pilgrims? The English Separatists behind the Mayflower', length: '6 min read', grade: 'Gr 7', gradient: ['#e8d8ff','#cfd8ff'],
+            lexile: '980L', wordCount: 580, standards: ['RI.7.1','RI.7.2'], keywords: ['Pilgrims','Separatists','religion','England'],
+            summary: 'The story of the religious dissenters whose search for freedom led them across an ocean — and how they came to be called Pilgrims.',
+            excerpt: 'Long before they boarded the Mayflower, the people we now call the Pilgrims were known by a different name: Separatists. In early 17th-century England, the Church of England was the official church, and the king expected everyone to belong to it. The Separatists believed the Church was beyond reform. They wanted to leave it altogether — a dangerous decision in a country where religious dissent could mean prison or worse.' },
+          { id: 'm-3', type: 'video',   typeLabel: 'Video',   title: "Mapping the Mayflower's Atlantic crossing", length: '4 min watch', grade: 'Gr 7', gradient: ['#d9eaff','#bcd8ff'],
+            lexile: 'N/A', wordCount: null, standards: ['SL.7.2','RI.7.7'], keywords: ['Mayflower','navigation','Atlantic','map'],
+            summary: "An animated map traces the Mayflower's route from Plymouth, England across the Atlantic — including the storms that pushed the ship far off course.",
+            excerpt: "This 4-minute video uses an animated map to follow the Mayflower across the Atlantic. As the route unfolds, narration explains why the ship aimed for the mouth of the Hudson River but landed hundreds of miles north at Cape Cod, and how a single navigational decision reshaped the colony's future." },
+          { id: 'm-4', type: 'video',   typeLabel: 'Video',   title: 'Inside the Mayflower: a tour of the cramped passenger ship', length: '5 min watch', grade: 'Gr 7', gradient: ['#cfd8ff','#e8d3ff'],
+            lexile: 'N/A', wordCount: null, standards: ['SL.7.2','RI.7.3'], keywords: ['Mayflower','ship','daily life','replica'],
+            summary: 'A historian walks through a full-scale replica of the Mayflower to show students just how little space 102 passengers shared.',
+            excerpt: 'In this 5-minute video, a historian leads a tour of the Mayflower II — a full-scale replica docked in Plymouth, Massachusetts. Students see the gun deck, where most passengers spent the entire voyage, and learn why bunks, privacy, and even daylight were nearly impossible to find on a ship of this size.' },
+          { id: 'm-5', type: 'article', typeLabel: 'Article', title: 'Life aboard the Mayflower: cramped quarters and brutal conditions', length: '5 min read', grade: 'Gr 7', gradient: ['#c7efd1','#d9eaff'],
+            lexile: '940L', wordCount: 510, standards: ['RI.7.1','RI.7.3'], keywords: ['shipboard life','passengers','daily routine'],
+            summary: 'What was day-to-day life like during the voyage — meals, sleep, illness, and the constant motion of a ship at sea?',
+            excerpt: "For 66 days, 102 passengers shared a wooden ship roughly 100 feet long. Most of the Mayflower's passengers spent the voyage on the gun deck, a low-ceilinged space crowded with families, supplies, and even livestock. Cooking was nearly impossible at sea — meals were usually cold biscuits, salted meat, and beer. Seasickness was common, and at least one passenger died during the voyage. By the time the ship reached land, nearly everyone aboard was exhausted and sick." },
+          { id: 'm-6', type: 'article', typeLabel: 'Article', title: "The Wampanoag and the Pilgrims: a Native nation's first encounter", length: '6 min read', grade: 'Gr 7', gradient: ['#ffe2a8','#ffcad4'],
+            lexile: '1010L', wordCount: 620, standards: ['RI.7.1','RI.7.2','RI.7.6'], keywords: ['Wampanoag','Indigenous','encounter','Massasoit'],
+            summary: 'The Pilgrims did not land in an empty wilderness. The Wampanoag had lived on this land for thousands of years — and they had their own reasons for meeting the new arrivals.',
+            excerpt: 'Long before the Mayflower arrived, the land we now call New England was home to the Wampanoag — a confederation of Native nations that had lived along the coast for thousands of years. By 1620, the Wampanoag had already endured a devastating epidemic, likely brought by European fishermen years earlier. When the Pilgrims landed, the Wampanoag faced a difficult choice: keep their distance from the new arrivals or build an alliance that might protect them from rival nations.' },
+          { id: 'm-7', type: 'video',   typeLabel: 'Video',   title: "Plymouth in 1621: the story behind the 'first Thanksgiving'", length: '4 min watch', grade: 'Gr 7', gradient: ['#ffcad4','#e8d3ff'],
+            lexile: 'N/A', wordCount: null, standards: ['SL.7.2','RI.7.6'], keywords: ['Plymouth','Thanksgiving','Wampanoag','primary sources'],
+            summary: 'A short documentary separates myth from history in the well-known story of the 1621 harvest gathering between the Pilgrims and the Wampanoag.',
+            excerpt: "In this 4-minute video, historians at Plimoth Patuxet Museums walk students through what we actually know — and don't know — about the 1621 harvest gathering. Using primary sources and the perspectives of Wampanoag descendants, the video reframes the familiar Thanksgiving story." },
+          { id: 'm-8', type: 'article', typeLabel: 'Article', title: 'The Mayflower Compact: an early experiment in self-government', length: '5 min read', grade: 'Gr 7', gradient: ['#bcd8ff','#c7efd1'],
+            lexile: '990L', wordCount: 560, standards: ['RI.7.1','RI.7.2','RI.7.3'], keywords: ['Mayflower Compact','self-government','democracy','colony'],
+            summary: 'Before stepping off the ship, 41 men signed a short agreement that would shape the colony for decades. What did it actually say — and why does it matter?',
+            excerpt: "When the Mayflower anchored off Cape Cod, a problem emerged. The colonists' charter had been for Virginia, and some passengers argued that without it, no laws applied. To prevent the colony from falling apart before it began, 41 of the men aboard signed a short document we now call the Mayflower Compact. In just a few sentences, they agreed to make laws together and obey them — an early step toward self-government in the English colonies." }
+        ]
       }
     };
 
@@ -1724,7 +1765,8 @@
       const p = (prompt || '').toLowerCase();
       if (/\brl[\s._-]*4[\s._-]*5\b|\brl\.?\s*4\.?\s*5\b/.test(p)) return 'rl-4-5';
       if (/water cycle|raindrop|evaporat|condensat|precipitat/.test(p)) return 'water-cycle';
-      return 'firefighters';
+      if (/firefighter|community helper|first responder/.test(p)) return 'firefighters';
+      return 'mayflower';
     }
 
     // Returns 'article' or 'video' if the prompt explicitly asks for one type;
@@ -1739,7 +1781,7 @@
     }
 
     function getTopicConfig() {
-      return SINGLE_RESULTS_BY_TOPIC[state.topicKey] || SINGLE_RESULTS_BY_TOPIC.firefighters;
+      return SINGLE_RESULTS_BY_TOPIC[state.topicKey] || SINGLE_RESULTS_BY_TOPIC.mayflower;
     }
 
     // ============================================================
