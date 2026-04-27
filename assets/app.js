@@ -667,6 +667,28 @@
       scrollToBottom();
     }
 
+    // Maturity level buckets: K-2, 3-5, 6-8, 9-12
+    function getMaturityLevel(item) {
+      const raw = String(item.grade || '').replace(/^Gr\s*/i, '').toUpperCase();
+      if (raw === 'K') return 'Lower Elem';
+      const n = parseInt(raw, 10);
+      if (isNaN(n)) return 'Lower Elem';
+      if (n <= 2) return 'Lower Elem';
+      if (n <= 5) return 'Upper Elem';
+      if (n <= 8) return 'Middle';
+      return 'High';
+    }
+
+    // 200L band centered ~100L below the article's Lexile, snapped to 100L
+    function getReadingBand(item) {
+      if (!item.lexile || item.lexile === 'N/A') return null;
+      const m = /(\d+)/.exec(item.lexile);
+      if (!m) return null;
+      const v = parseInt(m[1], 10);
+      const low = Math.max(0, Math.floor((v - 100) / 100) * 100);
+      return low + 'L–' + (low + 200) + 'L';
+    }
+
     // ============================================================
     // Shared content row (for bundle + single picker)
     //  - Bundle (multi): row body click = preview, checkbox click = toggle
@@ -678,8 +700,9 @@
       row.dataset.id = item.id;
       row.dataset.type = item.type;
       const icon = item.type === 'video' ? '▶' : '📄';
+      const band = getReadingBand(item);
       const metaText = item.typeLabel + ' · ' + item.length +
-        (item.lexile !== 'N/A' ? ' · Lexile ' + item.lexile : '');
+        (band ? ' · ' + band : '');
       row.innerHTML =
         '<div class="cr-check" data-role="check">' +
           (opts.multi
@@ -693,7 +716,7 @@
           '<div class="cr-title">' + item.title + '</div>' +
           '<div class="cr-meta">' + metaText + '</div>' +
         '</div>' +
-        '<div class="cr-grade">' + item.grade + '</div>';
+        '<div class="cr-grade">' + getMaturityLevel(item) + '</div>';
 
       if (opts.multi) {
         // Checkbox click toggles selection (and does NOT open preview)
@@ -1094,7 +1117,7 @@
       row.dataset.type = item.type;
 
       const isVideo = item.type === 'video';
-      const lexileVal = (item.lexile && item.lexile !== 'N/A') ? item.lexile : null;
+      const band = getReadingBand(item);
       const checkSvg = '<svg width="11" height="9" viewBox="0 0 11 9" fill="none"><polyline points="1 4.5 4 7.5 10 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
       row.innerHTML =
@@ -1104,11 +1127,11 @@
           '<span class="rr-checkbox">' + checkSvg + '</span>' +
         '</div>' +
         '<div class="rr-body">' +
-          '<div class="rr-date">' + item.grade + ' · ' + item.typeLabel + '</div>' +
+          '<div class="rr-date">' + item.typeLabel + '</div>' +
           '<div class="rr-title">' + item.title + '</div>' +
           '<div class="rr-meta-grid">' +
-            '<div><div class="rr-meta-label">Maturity level</div><div class="rr-meta-val">' + item.grade + '</div></div>' +
-            '<div><div class="rr-meta-label">Reading</div><div class="rr-meta-val">' + (lexileVal ? lexileVal : item.length) + '</div></div>' +
+            '<div><div class="rr-meta-label">Maturity level</div><div class="rr-meta-val">' + getMaturityLevel(item) + '</div></div>' +
+            '<div><div class="rr-meta-label">Reading</div><div class="rr-meta-val">' + (band ? band : item.length) + '</div></div>' +
           '</div>' +
         '</div>';
 
@@ -1341,10 +1364,10 @@
         '</div>' +
         '<h2 class="preview-title">' + item.title + '</h2>' +
         '<div class="preview-meta-row">' +
-          '<span class="meta-pill grade">' + item.grade + '</span>' +
+          '<span class="meta-pill grade">' + getMaturityLevel(item) + '</span>' +
           '<span class="meta-pill">' + item.typeLabel + '</span>' +
           '<span class="meta-pill">' + item.length + '</span>' +
-          (item.lexile !== 'N/A' ? '<span class="meta-pill">Lexile ' + item.lexile + '</span>' : '') +
+          (getReadingBand(item) ? '<span class="meta-pill">' + getReadingBand(item) + '</span>' : '') +
         '</div>' +
 
         '<div class="preview-section">' +
@@ -1462,19 +1485,20 @@
       if (selected.length === 1) {
         const it = selected[0];
         const isVideo = it.type === 'video';
-        const lexileHtml = it.lexile && it.lexile !== 'N/A'
-          ? '<div class="scc-meta-cell"><span class="scc-meta-label">Lexile</span><span class="scc-meta-value">' + it.lexile + '</span></div>'
+        const band = getReadingBand(it);
+        const bandHtml = band
+          ? '<div class="scc-meta-cell"><span class="scc-meta-label">Reading level</span><span class="scc-meta-value">' + band + '</span></div>'
           : '';
         return '<div class="selected-content-card">' +
           '<div class="scc-thumb" style="background:linear-gradient(135deg,' + it.gradient[0] + ',' + it.gradient[1] + ');">' +
             (isVideo ? '<svg width="28" height="28" viewBox="0 0 24 24" fill="white" opacity="0.8"><polygon points="5 3 19 12 5 21 5 3"/></svg>' : '') +
           '</div>' +
           '<div class="scc-body">' +
-            '<div class="scc-eyebrow">' + it.grade + ' · ' + it.typeLabel + '</div>' +
+            '<div class="scc-eyebrow">' + getMaturityLevel(it) + ' · ' + it.typeLabel + '</div>' +
             '<div class="scc-title">' + it.title + '</div>' +
             '<div class="scc-meta-row">' +
-              '<div class="scc-meta-cell"><span class="scc-meta-label">Reading</span><span class="scc-meta-value">' + it.length + '</span></div>' +
-              lexileHtml +
+              '<div class="scc-meta-cell"><span class="scc-meta-label">Length</span><span class="scc-meta-value">' + it.length + '</span></div>' +
+              bandHtml +
             '</div>' +
           '</div>' +
         '</div>';
@@ -1488,7 +1512,7 @@
             '<div class="stack-item-title">' + it.title + '</div>' +
             '<div class="stack-item-meta">' + it.typeLabel + ' · ' + it.length + '</div>' +
           '</div>' +
-          '<div class="grade-chip">' + it.grade + '</div>' +
+          '<div class="grade-chip">' + getMaturityLevel(it) + '</div>' +
         '</div>';
       }).join('');
 
