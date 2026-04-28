@@ -2133,14 +2133,12 @@ img { max-width: 100%; display: block; }
 }
 .preview-type-chip {
   position: absolute;
-  top: 12px; left: 12px;
-  background: rgba(10, 21, 53, 0.82);
-  color: white;
-  padding: 3px 10px;
-  border-radius: 999px;
-  font-size: 10px; font-weight: 700;
-  letter-spacing: 0.08em;
-  backdrop-filter: blur(6px);
+  top: 8px; left: 8px;
+  display: inline-flex; height: 28px; padding: 4px 8px;
+  align-items: center; gap: 4px;
+  border-radius: 4px; background: rgba(10, 21, 53, 0.78);
+  color: white; font-size: 11px; font-weight: 600; letter-spacing: 0.03em;
+  text-transform: capitalize; backdrop-filter: blur(4px);
 }
 .preview-play {
   width: 56px; height: 56px;
@@ -2686,9 +2684,11 @@ img { max-width: 100%; display: block; }
 .article-card .thumb-img { aspect-ratio: 16 / 10; background: linear-gradient(135deg, #ddd, #bbb); background-size: cover; }
 .article-card .category-chip {
   position: absolute; top: 8px; left: 8px;
-  background: rgba(0,0,0,0.5); color: white;
-  font-size: 10px; font-weight: 700; letter-spacing: 0.04em;
-  padding: 2px 7px; border-radius: 999px;
+  display: inline-flex; height: 28px; padding: 4px 8px;
+  align-items: center; gap: 4px;
+  border-radius: 4px; background: rgba(10, 21, 53, 0.78);
+  color: white; font-size: 11px; font-weight: 600; letter-spacing: 0.03em;
+  text-transform: capitalize; backdrop-filter: blur(4px);
 }
 .article-card .bookmark-btn {
   position: absolute; top: 6px; right: 6px;
@@ -2705,7 +2705,7 @@ img { max-width: 100%; display: block; }
   margin: 0 0 5px;
   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
 }
-.article-card .card-reading { font-size: 11px; color: var(--nw-text-muted); }
+.article-card .card-reading { font-size: 11px; color: var(--nw-text-muted); line-height: 1.7; }
 .article-card .card-cta {
   display: flex; gap: 6px; padding: 8px 12px 10px;
   border-top: 1px solid var(--nw-border);
@@ -2870,12 +2870,11 @@ img { max-width: 100%; display: block; }
 /* Type badge — absolute, bottom-left of thumb */
 .rr-type-badge {
   position: absolute;
-  bottom: 8px; left: 8px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  padding: 3px 8px;
+  top: 8px; left: 8px;
+  display: inline-flex; height: 28px; padding: 4px 8px;
+  align-items: center; gap: 4px;
   border-radius: 4px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.03em;
   text-transform: capitalize;
 }
 .rr-type-article, .rr-type-video {

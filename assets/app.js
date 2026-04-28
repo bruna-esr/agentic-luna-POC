@@ -1118,6 +1118,15 @@
       scrollToBottom();
     }
 
+    function getItemDate(item) {
+      var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      var n = parseInt((item.id.match(/\d+/) || ['1'])[0]);
+      var month = months[(n * 3 + 5) % 12];
+      var day   = ((n * 7 + 3) % 28) + 1;
+      var year  = n % 2 === 0 ? 2024 : 2025;
+      return month + ' ' + day + ', ' + year;
+    }
+
     function buildResultRow(item, opts) {
       const row = document.createElement('div');
       row.className = 'result-row' + (opts.selected ? ' selected' : '');
@@ -1135,7 +1144,7 @@
           '<span class="rr-checkbox">' + checkSvg + '</span>' +
         '</div>' +
         '<div class="rr-body">' +
-          '<div class="rr-date">' + item.typeLabel + '</div>' +
+          '<div class="rr-date">' + getItemDate(item) + '</div>' +
           '<div class="rr-title">' + item.title + '</div>' +
           '<div class="rr-meta-grid">' +
             '<div><div class="rr-meta-label">Maturity level</div><div class="rr-meta-val">' + getMaturityLevel(item) + '</div></div>' +
