@@ -1081,7 +1081,7 @@
         '</a>' +
         '<div class="footer-right">' +
           moreBtnHtml +
-          '<button class="primary-btn confirm-btn">Use selected content <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></button>' +
+          '<button class="primary-btn confirm-btn">Select this content <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></button>' +
         '</div>';
       card.appendChild(footer);
 
