@@ -210,46 +210,54 @@
         searchSource: 'Newsela ELA library',
         resultsNoun: 'articles and videos',
         items: [
-          { id: 's-1', type: 'article', typeLabel: 'Article', title: 'Meet the firefighters keeping our neighborhood safe', length: '4 min read', grade: 'Gr 2', gradient: ['#ffb199','#ffd8c8'],
+          { id: 's-1', type: 'article', typeLabel: 'Article', title: 'Meet the firefighters keeping our neighborhood safe', length: '4 min read', grade: 'Gr 2', gradient: ['#ffb199','#ffd8c8'], imageUrl: 'https://images.unsplash.com/photo-1575867094974-9e16b6f55360?w=400&h=220&fit=crop&auto=format',
             lexile: '420L', wordCount: 312, standards: ['RI.2.1','RI.2.3'], keywords: ['firefighters','safety','rescue'],
             summary: 'A look inside a local firehouse — the trucks, tools, and teamwork firefighters rely on to keep their community safe.',
             excerpt: 'When there is a fire, firefighters are the first people to help. They wear big, strong suits called "turnout gear" that keep them safe from heat and smoke. Firefighters work together as a team. One may drive the truck. Another may connect the long hose to a hydrant. A third may help people get out of a building safely.' },
-          { id: 's-2', type: 'article', typeLabel: 'Article', title: 'Firefighters at work: Inside the firehouse', length: '5 min read', grade: 'Gr 2', gradient: ['#ffd8c8','#f5ddf3'],
+          { id: 's-2', type: 'article', typeLabel: 'Article', title: 'Firefighters at work: Inside the firehouse', length: '5 min read', grade: 'Gr 2', gradient: ['#ffd8c8','#f5ddf3'], imageUrl: 'https://images.unsplash.com/photo-1503714964235-8954a5249c00?w=400&h=220&fit=crop&auto=format',
             lexile: '450L', wordCount: 380, standards: ['RI.2.1','RI.2.3','RI.2.7'], keywords: ['firefighters','firehouse','daily life'],
             summary: 'Explore a firehouse from top to bottom — the engine bay, the sleeping quarters, and the training room.',
             excerpt: 'Walk into a firehouse and you will see a lot more than just fire trucks. Firefighters sometimes sleep at the firehouse because they have to be ready to help at any hour. There is a kitchen where they cook meals together. There is a training room where they practice. And of course, there is the big engine bay where the fire trucks wait, shiny and ready to go.' },
-          { id: 's-4', type: 'video',   typeLabel: 'Video',   title: 'A firefighter shows us her gear', length: '2 min watch', grade: 'Gr 2', gradient: ['#f5ddf3','#ffd8c8'],
+          { id: 's-4', type: 'video',   typeLabel: 'Video',   title: 'A firefighter shows us her gear', length: '2 min watch', grade: 'Gr 2', gradient: ['#f5ddf3','#ffd8c8'], imageUrl: 'https://images.unsplash.com/photo-1638401607229-31dbd79b5b37?w=400&h=220&fit=crop&auto=format',
             lexile: 'N/A', wordCount: null, standards: ['SL.2.2','RI.2.3'], keywords: ['firefighters','gear','equipment'],
             summary: 'Firefighter Jenna walks students through every piece of her gear — from her helmet to her boots.',
             excerpt: 'In this 2-minute video, Firefighter Jenna shows and explains every piece of her turnout gear. Students see how a helmet, air tank, and heavy boots work together to protect a firefighter on the job.' },
-          { id: 's-6', type: 'video',   typeLabel: 'Video',   title: 'A day in the life of Firefighter Marcus', length: '3 min watch', grade: 'Gr 2', gradient: ['#ffb199','#f5ddf3'],
+          { id: 's-6', type: 'video',   typeLabel: 'Video',   title: 'A day in the life of Firefighter Marcus', length: '3 min watch', grade: 'Gr 2', gradient: ['#ffb199','#f5ddf3'], imageUrl: 'https://images.unsplash.com/photo-1634468413956-831adf9d5a06?w=400&h=220&fit=crop&auto=format',
             lexile: 'N/A', wordCount: null, standards: ['SL.2.2','RI.2.3'], keywords: ['firefighter','daily life','community'],
             summary: 'Firefighter Marcus takes us through a full shift — from morning roll call to a real emergency call.',
             excerpt: 'This 3-minute video follows Firefighter Marcus through a full day at Station 14. You will see his morning check of the equipment, a school visit where he teaches fire safety, and a surprise call that takes the whole team into action.' },
-          { id: 's-3', type: 'article', typeLabel: 'Article', title: 'What firefighters teach us about fire safety', length: '3 min read', grade: 'Gr 2', gradient: ['#e1efff','#bcd8ff'],
+          { id: 's-3', type: 'article', typeLabel: 'Article', title: 'What firefighters teach us about fire safety', length: '3 min read', grade: 'Gr 2', gradient: ['#e1efff','#bcd8ff'], imageUrl: 'https://images.unsplash.com/photo-1618325508550-951512a1e82d?w=400&h=220&fit=crop&auto=format',
             lexile: '400L', wordCount: 260, standards: ['RI.2.1','RI.2.3'], keywords: ['fire safety','prevention','home'],
             summary: 'Key fire safety tips firefighters want every kid to know — smoke alarms, escape plans, and what to do if there is a fire.',
             excerpt: 'Firefighters do not just put out fires — they also teach kids how to stay safe. Did you know that a smoke alarm can save a life? Firefighters say every home should have one. If a fire ever starts, the first rule is simple: get out and stay out. Then call for help. Firefighters also teach kids to "stop, drop, and roll" if their clothes catch fire.' },
-          { id: 's-5', type: 'article', typeLabel: 'Article', title: 'What it takes to be a firefighter: training and teamwork', length: '4 min read', grade: 'Gr 2', gradient: ['#ffd8c8','#e1efff'],
+          { id: 's-5', type: 'article', typeLabel: 'Article', title: 'What it takes to be a firefighter: training and teamwork', length: '4 min read', grade: 'Gr 2', gradient: ['#ffd8c8','#e1efff'], imageUrl: 'https://images.unsplash.com/photo-1633092228879-d6a88c22e7bc?w=400&h=220&fit=crop&auto=format',
             lexile: '430L', wordCount: 325, standards: ['RI.2.1','RI.2.3'], keywords: ['training','teamwork','firefighter'],
             summary: 'A close look at the training firefighters go through and the teamwork that makes every rescue possible.',
             excerpt: 'Becoming a firefighter takes months of training. New firefighters learn how to use hoses, climb ladders, and care for people who are hurt. They practice together as a team because every fire is different. During an emergency, one firefighter cannot do the job alone. They rely on each other to stay safe and help the people who need them.' },
-          { id: 's-9', type: 'article', typeLabel: 'Article', title: 'How firefighters use technology to fight fires', length: '4 min read', grade: 'Gr 2', gradient: ['#c7efd1','#d9eaff'],
+          { id: 's-9', type: 'article', typeLabel: 'Article', title: 'How firefighters use technology to fight fires', length: '4 min read', grade: 'Gr 2', gradient: ['#c7efd1','#d9eaff'], imageUrl: 'https://images.unsplash.com/photo-1618609252884-c29e29b32205?w=400&h=220&fit=crop&auto=format',
             lexile: '440L', wordCount: 295, standards: ['RI.2.1','RI.2.3'], keywords: ['technology','tools','firefighter'],
             summary: 'From thermal cameras to computer-aided dispatch, a look at the modern tools firefighters rely on.',
             excerpt: 'Firefighters today use more technology than ever before. A thermal camera can see through smoke to find people who are trapped. A computer inside the truck shows the fastest route to the fire. And a radio keeps the whole team connected at every step of the rescue.' },
-          { id: 's-10', type: 'article', typeLabel: 'Article', title: 'Women in firefighting: breaking barriers on the job', length: '4 min read', grade: 'Gr 2', gradient: ['#f5ddf3','#bcd8ff'],
+          { id: 's-10', type: 'article', typeLabel: 'Article', title: 'Women in firefighting: breaking barriers on the job', length: '4 min read', grade: 'Gr 2', gradient: ['#f5ddf3','#bcd8ff'], imageUrl: 'https://plus.unsplash.com/premium_photo-1661724793002-03a269b5bf35?w=400&h=220&fit=crop&auto=format',
             lexile: '415L', wordCount: 300, standards: ['RI.2.1','RI.2.3'], keywords: ['women','careers','firefighter'],
             summary: 'Meet some of the women who have joined fire departments and are changing what it means to be a firefighter.',
             excerpt: 'For a long time, most firefighters were men. But that is changing. Today, women all over the country are becoming firefighters. They go through the same tough training, carry the same heavy equipment, and respond to the same emergencies. Many say they chose the job because they wanted to help their community and make a difference every single day.' },
-          { id: 's-7', type: 'video',   typeLabel: 'Video',   title: 'Inside a fire engine: the trucks that save lives', length: '2 min watch', grade: 'Gr 2', gradient: ['#e8d8ff','#ffd8c8'],
+          { id: 's-7', type: 'video',   typeLabel: 'Video',   title: 'Inside a fire engine: the trucks that save lives', length: '2 min watch', grade: 'Gr 2', gradient: ['#e8d8ff','#ffd8c8'], imageUrl: 'https://images.unsplash.com/photo-1600624697183-00566baf12e6?w=400&h=220&fit=crop&auto=format',
             lexile: 'N/A', wordCount: null, standards: ['SL.2.2','RI.2.3'], keywords: ['fire engine','equipment','vehicles'],
             summary: 'A guided tour inside a fire engine — from the hoses and ladders to the computer that helps the team find an emergency.',
             excerpt: 'In this short video, a firefighter opens every compartment on her engine. Students will see axes, hoses, first-aid kits, and the special computer that shows the crew exactly where they need to go.' },
-          { id: 's-8', type: 'video',   typeLabel: 'Video',   title: "A smoke alarm lesson: a firefighter visits the classroom", length: '3 min watch', grade: 'Gr 2', gradient: ['#bcd8ff','#ffcad4'],
+          { id: 's-8', type: 'video',   typeLabel: 'Video',   title: "A smoke alarm lesson: a firefighter visits the classroom", length: '3 min watch', grade: 'Gr 2', gradient: ['#bcd8ff','#ffcad4'], imageUrl: 'https://images.unsplash.com/photo-1504667290505-eee11f23905a?w=400&h=220&fit=crop&auto=format',
             lexile: 'N/A', wordCount: null, standards: ['SL.2.2','RI.2.3'], keywords: ['smoke alarm','fire safety','home'],
             summary: 'A friendly firefighter teaches a class how a smoke alarm works — and why it matters at home.',
-            excerpt: 'Firefighter Linda visits a 2nd-grade classroom with a smoke alarm and a lesson. Students learn why the alarm beeps, how to test it once a month, and what to do if it goes off at night.' }
+            excerpt: 'Firefighter Linda visits a 2nd-grade classroom with a smoke alarm and a lesson. Students learn why the alarm beeps, how to test it once a month, and what to do if it goes off at night.' },
+          { id: 's-11', type: 'article', typeLabel: 'Article', title: 'How firefighters stay ready: drills, fitness, and teamwork', length: '4 min read', grade: 'Gr 2', gradient: ['#ffd8c8','#c7efd1'], imageUrl: 'https://images.unsplash.com/photo-1777059017733-89f823253a9f?w=400&h=220&fit=crop&auto=format',
+            lexile: '440L', wordCount: 340, standards: ['RI.2.1','RI.2.3'], keywords: ['firefighters','training','fitness','drills'],
+            summary: 'Firefighters practice drills, keep fit, and work as a team every day — long before a fire alarm ever rings.',
+            excerpt: 'Firefighters do not just wait around for emergencies. Every day, they practice drills to make sure they know exactly what to do when a call comes in. They exercise to stay strong enough to carry heavy hoses and equipment. They also eat and cook together so the team stays close-knit. Being ready is their most important job.' },
+          { id: 's-12', type: 'article', typeLabel: 'Article', title: 'From call to rescue: how firefighters respond in minutes', length: '3 min read', grade: 'Gr 2', gradient: ['#e1efff','#ffd8c8'], imageUrl: 'https://images.unsplash.com/photo-1610586618549-a05378824c91?w=400&h=220&fit=crop&auto=format',
+            lexile: '430L', wordCount: 295, standards: ['RI.2.1','RI.2.3','RI.2.7'], keywords: ['firefighters','emergency','response','rescue'],
+            summary: 'Step by step, follow what happens from the moment a 911 call is made to when firefighters arrive on the scene.',
+            excerpt: 'When someone calls 911 to report a fire, a lot happens very fast. A dispatcher tells the nearest fire station where to go. Firefighters pull on their gear in less than a minute. The engine rolls out of the bay with its lights flashing and siren blaring. In many neighborhoods, firefighters arrive in under five minutes. Every second counts.' }
         ]
       },
       'rl-4-5': {
@@ -259,35 +267,35 @@
         searchSource: 'Newsela ELA library aligned to RL.4.5',
         resultsNoun: 'resources',
         items: [
-          { id: 'rl-1', type: 'article', typeLabel: 'Article', title: 'How poems are built: lines, stanzas, and rhyme', length: '4 min read', grade: 'Gr 4', gradient: ['#ffe2a8','#ffcad4'],
+          { id: 'rl-1', type: 'article', typeLabel: 'Article', title: 'How poems are built: lines, stanzas, and rhyme', length: '4 min read', grade: 'Gr 4', gradient: ['#ffe2a8','#ffcad4'], imageUrl: 'https://images.unsplash.com/photo-1576238580501-f21ccaaa83ac?w=400&h=220&fit=crop&auto=format',
             lexile: '770L', wordCount: 410, standards: ['RL.4.5','RL.4.4'], keywords: ['poetry','stanza','rhyme','structure'],
             summary: 'Explore the building blocks poets use — lines, stanzas, rhyme, and rhythm — and why those choices shape how a poem feels.',
             excerpt: 'A poem looks different from a story on the page. Instead of paragraphs, a poem is built from lines, and groups of lines are called stanzas. Some poems use rhyme at the ends of lines; others use rhythm, or a pattern of beats, to create a feeling. When a poet breaks a line in a surprising place, they are asking you to pause and notice something.' },
-          { id: 'rl-2', type: 'article', typeLabel: 'Article', title: 'Reading a play: stage directions, dialogue, and scenes', length: '5 min read', grade: 'Gr 4', gradient: ['#cfd8ff','#e8d3ff'],
+          { id: 'rl-2', type: 'article', typeLabel: 'Article', title: 'Reading a play: stage directions, dialogue, and scenes', length: '5 min read', grade: 'Gr 4', gradient: ['#cfd8ff','#e8d3ff'], imageUrl: 'https://images.unsplash.com/photo-1503095396549-807759245b35?w=400&h=220&fit=crop&auto=format',
             lexile: '790L', wordCount: 450, standards: ['RL.4.5','RL.4.3'], keywords: ['drama','stage directions','dialogue','scenes'],
             summary: 'A guide to the parts of a play — cast lists, scene settings, dialogue, and stage directions — and how each one tells you something different.',
             excerpt: 'Plays are written to be acted out, so they are organized in a very different way than a story. At the top you will find the cast — the list of characters. Scene headings tell you where and when the action happens. The dialogue is what the characters say out loud. And the stage directions, often in italics, tell the actors how to move, speak, or feel.' },
-          { id: 'rl-4', type: 'video',   typeLabel: 'Video',   title: 'From verse to scene: poems, plays, and stories compared', length: '3 min watch', grade: 'Gr 4', gradient: ['#f5ddf3','#bcd8ff'],
+          { id: 'rl-4', type: 'video',   typeLabel: 'Video',   title: 'From verse to scene: poems, plays, and stories compared', length: '3 min watch', grade: 'Gr 4', gradient: ['#f5ddf3','#bcd8ff'], imageUrl: 'https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=400&h=220&fit=crop&auto=format',
             lexile: 'N/A', wordCount: null, standards: ['RL.4.5','SL.4.2'], keywords: ['poems','plays','prose','structure'],
             summary: 'A short video walks through three versions of the same moment — as a poem, a scene from a play, and a paragraph of prose — to show how structure changes meaning.',
             excerpt: 'In this 3-minute video, students see the same small story — a kid losing a pet — written three ways: as a stanza of a poem, as a scene from a play with stage directions, and as a paragraph of prose. A narrator highlights the structural clues that tell you which is which.' },
-          { id: 'rl-6', type: 'video',   typeLabel: 'Video',   title: 'Reading a poem out loud: finding the stanzas', length: '3 min watch', grade: 'Gr 4', gradient: ['#ffcad4','#cfd8ff'],
+          { id: 'rl-6', type: 'video',   typeLabel: 'Video',   title: 'Reading a poem out loud: finding the stanzas', length: '3 min watch', grade: 'Gr 4', gradient: ['#ffcad4','#cfd8ff'], imageUrl: 'https://images.unsplash.com/photo-1598738865218-7809c17181c3?w=400&h=220&fit=crop&auto=format',
             lexile: 'N/A', wordCount: null, standards: ['RL.4.5','SL.4.2'], keywords: ['poetry','stanzas','reading aloud'],
             summary: 'A teacher models how to read a poem aloud, pausing at line breaks and stanza breaks to show how structure shapes meaning.',
             excerpt: 'In this 3-minute video, Ms. Patel reads a short poem aloud three times — once flat, once rushing through the line breaks, and once pausing carefully. Students hear how the structure of a poem shapes the way it sounds and the way we understand it.' },
-          { id: 'rl-3', type: 'article', typeLabel: 'Article', title: 'What makes a poem different from a story?', length: '3 min read', grade: 'Gr 4', gradient: ['#c7efd1','#bcd8ff'],
+          { id: 'rl-3', type: 'article', typeLabel: 'Article', title: 'What makes a poem different from a story?', length: '3 min read', grade: 'Gr 4', gradient: ['#c7efd1','#bcd8ff'], imageUrl: 'https://images.unsplash.com/photo-1462642109801-4ac2971a3a51?w=400&h=220&fit=crop&auto=format',
             lexile: '750L', wordCount: 320, standards: ['RL.4.5'], keywords: ['poetry','prose','comparison','structure'],
             summary: 'A side-by-side look at how a poem and a short story about the same event can feel totally different because of how they are built.',
             excerpt: 'Imagine two writers describing the same rainy afternoon. One writes a story: "The rain tapped against Maria\'s window while she waited for her grandmother to arrive." The other writes a poem, arranging just a few words across three short lines. Same rain, same window — but a very different reading experience. The difference is not the topic. It is the structure.' },
-          { id: 'rl-5', type: 'article', typeLabel: 'Article', title: 'The structure of a short story: beginning, middle, and end', length: '4 min read', grade: 'Gr 4', gradient: ['#d0f0d0','#ffe2a8'],
+          { id: 'rl-5', type: 'article', typeLabel: 'Article', title: 'The structure of a short story: beginning, middle, and end', length: '4 min read', grade: 'Gr 4', gradient: ['#d0f0d0','#ffe2a8'], imageUrl: 'https://images.unsplash.com/photo-1631691971525-3f4b54255fea?w=400&h=220&fit=crop&auto=format',
             lexile: '780L', wordCount: 395, standards: ['RL.4.5','RL.4.3'], keywords: ['short story','prose','structure','plot'],
             summary: 'A clear overview of how most short stories are built — a setup, a problem, and a resolution.',
             excerpt: 'A short story is a piece of prose that tells a complete tale in a small space. Most short stories follow a simple structure. The beginning sets up the characters and setting. The middle introduces a problem the main character must face. The end shows how the character solves it — or learns something along the way.' },
-          { id: 'rl-7', type: 'video',   typeLabel: 'Video',   title: 'Staging a scene: how a play comes alive', length: '4 min watch', grade: 'Gr 4', gradient: ['#e8d3ff','#c7efd1'],
+          { id: 'rl-7', type: 'video',   typeLabel: 'Video',   title: 'Staging a scene: how a play comes alive', length: '4 min watch', grade: 'Gr 4', gradient: ['#e8d3ff','#c7efd1'], imageUrl: 'https://images.unsplash.com/photo-1615414047026-802692414b79?w=400&h=220&fit=crop&auto=format',
             lexile: 'N/A', wordCount: null, standards: ['RL.4.5','SL.4.2'], keywords: ['drama','stage directions','scene'],
             summary: 'Watch a single scene acted out, then see the script page beside it — so students can connect each structural element to what happens on stage.',
             excerpt: 'This 4-minute video pairs a scene from a short play with its script. As actors speak and move, callouts highlight the stage directions, dialogue, and scene heading that shaped each moment. It is a visual way to see the parts of a play working together.' },
-          { id: 'rl-8', type: 'video',   typeLabel: 'Video',   title: 'Line break or paragraph? Spotting the difference', length: '2 min watch', grade: 'Gr 4', gradient: ['#bcd8ff','#ffe2a8'],
+          { id: 'rl-8', type: 'video',   typeLabel: 'Video',   title: 'Line break or paragraph? Spotting the difference', length: '2 min watch', grade: 'Gr 4', gradient: ['#bcd8ff','#ffe2a8'], imageUrl: 'https://plus.unsplash.com/premium_photo-1671709104086-c382ed8e416a?w=400&h=220&fit=crop&auto=format',
             lexile: 'N/A', wordCount: null, standards: ['RL.4.5','SL.4.2'], keywords: ['poetry','prose','structure','line break'],
             summary: 'A fast-paced video flashes short excerpts on screen and asks students to decide: poem, play, or prose?',
             excerpt: 'In this 2-minute video, short text excerpts appear on screen one at a time. After each one, students are asked to identify whether they are looking at a poem, a play, or a paragraph of prose — based only on structural clues like line breaks, stage directions, or paragraphs.' }
@@ -300,35 +308,35 @@
         searchSource: 'Newsela science library',
         resultsNoun: 'articles and videos',
         items: [
-          { id: 'wc-2', type: 'article', typeLabel: 'Article', title: 'How clouds form and bring us rain', length: '4 min read', grade: 'Gr 3', gradient: ['#d9eaff','#e8f4ff'],
+          { id: 'wc-2', type: 'article', typeLabel: 'Article', title: 'How clouds form and bring us rain', length: '4 min read', grade: 'Gr 3', gradient: ['#d9eaff','#e8f4ff'], imageUrl: 'https://images.unsplash.com/photo-1530834341564-d8ae6d7e25a7?w=400&h=220&fit=crop&auto=format',
             lexile: '620L', wordCount: 310, standards: ['RI.3.1','RI.3.3'], keywords: ['clouds','condensation','precipitation'],
             summary: 'Learn how warm, wet air rises into the sky, cools off, and turns into the clouds that eventually bring rain.',
             excerpt: 'Have you ever watched a cloud and wondered where it came from? Clouds start out as water. When the sun warms a lake or even a puddle, some of the water turns into a gas called water vapor and rises into the sky. Up high, the air is cold. The vapor cools and turns back into tiny drops. Lots of those drops together is what we see as a cloud.' },
-          { id: 'wc-3', type: 'article', typeLabel: 'Article', title: 'Evaporation: where does water go when a puddle dries up?', length: '3 min read', grade: 'Gr 3', gradient: ['#c7efd1','#d9eaff'],
+          { id: 'wc-3', type: 'article', typeLabel: 'Article', title: 'Evaporation: where does water go when a puddle dries up?', length: '3 min read', grade: 'Gr 3', gradient: ['#c7efd1','#d9eaff'], imageUrl: 'https://images.unsplash.com/photo-1592773675370-ab7507717ad7?w=400&h=220&fit=crop&auto=format',
             lexile: '600L', wordCount: 275, standards: ['RI.3.1','RI.3.3'], keywords: ['evaporation','puddle','sun','water vapor'],
             summary: 'A friendly intro to evaporation — what makes a puddle disappear and where that water actually goes.',
             excerpt: 'After it rains, you might see a puddle on the sidewalk. Come back a few hours later, and the puddle is gone. Where did the water go? The answer is evaporation. When the sun warms the water in the puddle, the water slowly turns into a gas called water vapor. The vapor floats up into the air — so light that you cannot see it.' },
-          { id: 'wc-1', type: 'video',   typeLabel: 'Video',   title: 'Follow a raindrop: the water cycle in action', length: '3 min watch', grade: 'Gr 3', gradient: ['#bcd8ff','#d9eaff'],
+          { id: 'wc-1', type: 'video',   typeLabel: 'Video',   title: 'Follow a raindrop: the water cycle in action', length: '3 min watch', grade: 'Gr 3', gradient: ['#bcd8ff','#d9eaff'], imageUrl: 'https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=400&h=220&fit=crop&auto=format',
             lexile: 'N/A', wordCount: null, standards: ['RI.3.7','SL.3.2'], keywords: ['water cycle','rain','evaporation','condensation'],
             summary: 'A 3-minute animated video that follows a single raindrop through the full water cycle, narrated for 3rd graders.',
             excerpt: 'This 3-minute video follows one raindrop — starting in a puddle, rising into the air as water vapor, forming a cloud, and falling back to earth as rain. Simple animations label each step of the cycle along the way.' },
-          { id: 'wc-6', type: 'video',   typeLabel: 'Video',   title: 'Watching evaporation: a simple classroom experiment', length: '3 min watch', grade: 'Gr 3', gradient: ['#d9eaff','#c7efd1'],
+          { id: 'wc-6', type: 'video',   typeLabel: 'Video',   title: 'Watching evaporation: a simple classroom experiment', length: '3 min watch', grade: 'Gr 3', gradient: ['#d9eaff','#c7efd1'], imageUrl: 'https://plus.unsplash.com/premium_photo-1720904584887-4f982225a491?w=400&h=220&fit=crop&auto=format',
             lexile: 'N/A', wordCount: null, standards: ['RI.3.7','SL.3.2'], keywords: ['evaporation','experiment','science'],
             summary: 'Students set up a simple cup-and-sunlight experiment and watch evaporation happen over a few days.',
             excerpt: 'In this 3-minute video, a 3rd-grade class marks the water level in a clear cup, puts it in a sunny window, and checks it every day. By the end, the class can see — and measure — how much water has disappeared into the air.' },
-          { id: 'wc-4', type: 'article', typeLabel: 'Article', title: 'The four stages of the water cycle', length: '5 min read', grade: 'Gr 3', gradient: ['#bcd8ff','#c7efd1'],
+          { id: 'wc-4', type: 'article', typeLabel: 'Article', title: 'The four stages of the water cycle', length: '5 min read', grade: 'Gr 3', gradient: ['#bcd8ff','#c7efd1'], imageUrl: 'https://images.unsplash.com/photo-1506563805286-a52f937ec9ed?w=400&h=220&fit=crop&auto=format',
             lexile: '650L', wordCount: 375, standards: ['RI.3.1','RI.3.3','RI.3.7'], keywords: ['evaporation','condensation','precipitation','collection'],
             summary: 'A clear overview of the four stages of the water cycle — evaporation, condensation, precipitation, and collection — with simple examples of each.',
             excerpt: 'The water cycle is the path water takes as it moves around our planet, over and over again. Scientists break it into four main stages. First, evaporation: the sun heats water, and it turns into a gas. Second, condensation: the gas cools and forms clouds. Third, precipitation: water falls as rain, snow, sleet, or hail. Fourth, collection: water gathers in oceans, lakes, and rivers — ready to start the cycle again.' },
-          { id: 'wc-5', type: 'article', typeLabel: 'Article', title: 'Why the ocean is the biggest part of the water cycle', length: '4 min read', grade: 'Gr 3', gradient: ['#bcd8ff','#d0f0d0'],
+          { id: 'wc-5', type: 'article', typeLabel: 'Article', title: 'Why the ocean is the biggest part of the water cycle', length: '4 min read', grade: 'Gr 3', gradient: ['#bcd8ff','#d0f0d0'], imageUrl: 'https://images.unsplash.com/photo-1726400748516-61c4866bdcf2?w=400&h=220&fit=crop&auto=format',
             lexile: '640L', wordCount: 330, standards: ['RI.3.1','RI.3.3'], keywords: ['ocean','water cycle','evaporation'],
             summary: 'Most of the water on Earth is in the ocean. Learn how the ocean drives the biggest part of the water cycle every single day.',
             excerpt: 'Did you know that most of the water on our planet is in the ocean? The sun warms the ocean every day, and huge amounts of water turn into vapor and rise into the sky. That vapor forms clouds that drift over land, where they eventually let go of their rain. The ocean is the starting point for most of the water we see.' },
-          { id: 'wc-7', type: 'video',   typeLabel: 'Video',   title: 'Cloud types: what the sky tells us', length: '3 min watch', grade: 'Gr 3', gradient: ['#e8f4ff','#bcd8ff'],
+          { id: 'wc-7', type: 'video',   typeLabel: 'Video',   title: 'Cloud types: what the sky tells us', length: '3 min watch', grade: 'Gr 3', gradient: ['#e8f4ff','#bcd8ff'], imageUrl: 'https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=400&h=220&fit=crop&auto=format',
             lexile: 'N/A', wordCount: null, standards: ['RI.3.7','SL.3.2'], keywords: ['clouds','weather','sky'],
             summary: 'A short video walks through the main cloud types — cumulus, stratus, and cirrus — and what each one can tell us about the weather ahead.',
             excerpt: 'Have you ever looked up and wondered what kind of clouds you were seeing? This 3-minute video shows the three main cloud families. Students learn the names and what each type usually means: a sunny afternoon, a rainy day, or a change in the weather.' },
-          { id: 'wc-8', type: 'video',   typeLabel: 'Video',   title: 'The journey of a snowflake through the water cycle', length: '3 min watch', grade: 'Gr 3', gradient: ['#e1efff','#d9eaff'],
+          { id: 'wc-8', type: 'video',   typeLabel: 'Video',   title: 'The journey of a snowflake through the water cycle', length: '3 min watch', grade: 'Gr 3', gradient: ['#e1efff','#d9eaff'], imageUrl: 'https://images.unsplash.com/photo-1457269449834-928af64c684d?w=400&h=220&fit=crop&auto=format',
             lexile: 'N/A', wordCount: null, standards: ['RI.3.7','SL.3.2'], keywords: ['snow','precipitation','water cycle'],
             summary: 'Follow a single snowflake from the cloud to the ground — and all the way back up again.',
             excerpt: 'Not all precipitation is rain. This 3-minute video follows a single snowflake as it forms high in a cold cloud, drifts to the ground, melts in the spring sun, and begins the journey all over again.' }
@@ -341,35 +349,35 @@
         searchSource: 'Newsela social studies library',
         resultsNoun: 'articles and videos',
         items: [
-          { id: 'm-1', type: 'article', typeLabel: 'Article', title: "The Mayflower's 66-day voyage: 102 passengers cross the Atlantic", length: '5 min read', grade: 'Gr 7', gradient: ['#bcd8ff','#d9eaff'],
+          { id: 'm-1', type: 'article', typeLabel: 'Article', title: "The Mayflower's 66-day voyage: 102 passengers cross the Atlantic", length: '5 min read', grade: 'Gr 7', gradient: ['#bcd8ff','#d9eaff'], imageUrl: 'https://images.unsplash.com/photo-1684614451650-0f6f86b2d05e?w=400&h=220&fit=crop&auto=format',
             lexile: '950L', wordCount: 540, standards: ['RI.7.1','RI.7.3'], keywords: ['Mayflower','voyage','Atlantic','1620'],
             summary: 'A look at the 1620 voyage of the Mayflower — the route, the timeline, and the storms that nearly turned the ship back to England.',
             excerpt: 'In September 1620, a small merchant ship called the Mayflower set sail from Plymouth, England, bound for the New World. On board were 102 passengers — about half of them Separatists, members of a religious group seeking the freedom to practice their faith. The voyage was supposed to take roughly two months. Instead, it stretched to 66 grueling days at sea, plagued by storms, leaks, and seasickness. By the time the ship sighted land off Cape Cod in November, it was already too late in the year to plant crops.' },
-          { id: 'm-2', type: 'article', typeLabel: 'Article', title: 'Who were the Pilgrims? The English Separatists behind the Mayflower', length: '6 min read', grade: 'Gr 7', gradient: ['#e8d8ff','#cfd8ff'],
+          { id: 'm-2', type: 'article', typeLabel: 'Article', title: 'Who were the Pilgrims? The English Separatists behind the Mayflower', length: '6 min read', grade: 'Gr 7', gradient: ['#e8d8ff','#cfd8ff'], imageUrl: 'https://images.unsplash.com/photo-1653991011661-e1b96d9e7018?w=400&h=220&fit=crop&auto=format',
             lexile: '980L', wordCount: 580, standards: ['RI.7.1','RI.7.2'], keywords: ['Pilgrims','Separatists','religion','England'],
             summary: 'The story of the religious dissenters whose search for freedom led them across an ocean — and how they came to be called Pilgrims.',
             excerpt: 'Long before they boarded the Mayflower, the people we now call the Pilgrims were known by a different name: Separatists. In early 17th-century England, the Church of England was the official church, and the king expected everyone to belong to it. The Separatists believed the Church was beyond reform. They wanted to leave it altogether — a dangerous decision in a country where religious dissent could mean prison or worse.' },
-          { id: 'm-3', type: 'video',   typeLabel: 'Video',   title: "Mapping the Mayflower's Atlantic crossing", length: '4 min watch', grade: 'Gr 7', gradient: ['#d9eaff','#bcd8ff'],
+          { id: 'm-3', type: 'video',   typeLabel: 'Video',   title: "Mapping the Mayflower's Atlantic crossing", length: '4 min watch', grade: 'Gr 7', gradient: ['#d9eaff','#bcd8ff'], imageUrl: 'https://images.unsplash.com/photo-1760907218396-6a8fb1a2fcb2?w=400&h=220&fit=crop&auto=format',
             lexile: 'N/A', wordCount: null, standards: ['SL.7.2','RI.7.7'], keywords: ['Mayflower','navigation','Atlantic','map'],
             summary: "An animated map traces the Mayflower's route from Plymouth, England across the Atlantic — including the storms that pushed the ship far off course.",
             excerpt: "This 4-minute video uses an animated map to follow the Mayflower across the Atlantic. As the route unfolds, narration explains why the ship aimed for the mouth of the Hudson River but landed hundreds of miles north at Cape Cod, and how a single navigational decision reshaped the colony's future." },
-          { id: 'm-4', type: 'video',   typeLabel: 'Video',   title: 'Inside the Mayflower: a tour of the cramped passenger ship', length: '5 min watch', grade: 'Gr 7', gradient: ['#cfd8ff','#e8d3ff'],
+          { id: 'm-4', type: 'video',   typeLabel: 'Video',   title: 'Inside the Mayflower: a tour of the cramped passenger ship', length: '5 min watch', grade: 'Gr 7', gradient: ['#cfd8ff','#e8d3ff'], imageUrl: 'https://images.unsplash.com/photo-1653991011761-b3f1b96a58aa?w=400&h=220&fit=crop&auto=format',
             lexile: 'N/A', wordCount: null, standards: ['SL.7.2','RI.7.3'], keywords: ['Mayflower','ship','daily life','replica'],
             summary: 'A historian walks through a full-scale replica of the Mayflower to show students just how little space 102 passengers shared.',
             excerpt: 'In this 5-minute video, a historian leads a tour of the Mayflower II — a full-scale replica docked in Plymouth, Massachusetts. Students see the gun deck, where most passengers spent the entire voyage, and learn why bunks, privacy, and even daylight were nearly impossible to find on a ship of this size.' },
-          { id: 'm-5', type: 'article', typeLabel: 'Article', title: 'Life aboard the Mayflower: cramped quarters and brutal conditions', length: '5 min read', grade: 'Gr 7', gradient: ['#c7efd1','#d9eaff'],
+          { id: 'm-5', type: 'article', typeLabel: 'Article', title: 'Life aboard the Mayflower: cramped quarters and brutal conditions', length: '5 min read', grade: 'Gr 7', gradient: ['#c7efd1','#d9eaff'], imageUrl: 'https://images.unsplash.com/photo-1770121419710-d0cc834d5fcd?w=400&h=220&fit=crop&auto=format',
             lexile: '940L', wordCount: 510, standards: ['RI.7.1','RI.7.3'], keywords: ['shipboard life','passengers','daily routine'],
             summary: 'What was day-to-day life like during the voyage — meals, sleep, illness, and the constant motion of a ship at sea?',
             excerpt: "For 66 days, 102 passengers shared a wooden ship roughly 100 feet long. Most of the Mayflower's passengers spent the voyage on the gun deck, a low-ceilinged space crowded with families, supplies, and even livestock. Cooking was nearly impossible at sea — meals were usually cold biscuits, salted meat, and beer. Seasickness was common, and at least one passenger died during the voyage. By the time the ship reached land, nearly everyone aboard was exhausted and sick." },
-          { id: 'm-6', type: 'article', typeLabel: 'Article', title: "The Wampanoag and the Pilgrims: a Native nation's first encounter", length: '6 min read', grade: 'Gr 7', gradient: ['#ffe2a8','#ffcad4'],
+          { id: 'm-6', type: 'article', typeLabel: 'Article', title: "The Wampanoag and the Pilgrims: a Native nation's first encounter", length: '6 min read', grade: 'Gr 7', gradient: ['#ffe2a8','#ffcad4'], imageUrl: 'https://plus.unsplash.com/premium_photo-1724695601433-baa720dca28a?w=400&h=220&fit=crop&auto=format',
             lexile: '1010L', wordCount: 620, standards: ['RI.7.1','RI.7.2','RI.7.6'], keywords: ['Wampanoag','Indigenous','encounter','Massasoit'],
             summary: 'The Pilgrims did not land in an empty wilderness. The Wampanoag had lived on this land for thousands of years — and they had their own reasons for meeting the new arrivals.',
             excerpt: 'Long before the Mayflower arrived, the land we now call New England was home to the Wampanoag — a confederation of Native nations that had lived along the coast for thousands of years. By 1620, the Wampanoag had already endured a devastating epidemic, likely brought by European fishermen years earlier. When the Pilgrims landed, the Wampanoag faced a difficult choice: keep their distance from the new arrivals or build an alliance that might protect them from rival nations.' },
-          { id: 'm-7', type: 'video',   typeLabel: 'Video',   title: "Plymouth in 1621: the story behind the 'first Thanksgiving'", length: '4 min watch', grade: 'Gr 7', gradient: ['#ffcad4','#e8d3ff'],
+          { id: 'm-7', type: 'video',   typeLabel: 'Video',   title: "Plymouth in 1621: the story behind the 'first Thanksgiving'", length: '4 min watch', grade: 'Gr 7', gradient: ['#ffcad4','#e8d3ff'], imageUrl: 'https://images.unsplash.com/photo-1509373371864-c9ca992cc88a?w=400&h=220&fit=crop&auto=format',
             lexile: 'N/A', wordCount: null, standards: ['SL.7.2','RI.7.6'], keywords: ['Plymouth','Thanksgiving','Wampanoag','primary sources'],
             summary: 'A short documentary separates myth from history in the well-known story of the 1621 harvest gathering between the Pilgrims and the Wampanoag.',
             excerpt: "In this 4-minute video, historians at Plimoth Patuxet Museums walk students through what we actually know — and don't know — about the 1621 harvest gathering. Using primary sources and the perspectives of Wampanoag descendants, the video reframes the familiar Thanksgiving story." },
-          { id: 'm-8', type: 'article', typeLabel: 'Article', title: 'The Mayflower Compact: an early experiment in self-government', length: '5 min read', grade: 'Gr 7', gradient: ['#bcd8ff','#c7efd1'],
+          { id: 'm-8', type: 'article', typeLabel: 'Article', title: 'The Mayflower Compact: an early experiment in self-government', length: '5 min read', grade: 'Gr 7', gradient: ['#bcd8ff','#c7efd1'], imageUrl: 'https://images.unsplash.com/photo-1753799515464-d0455597cc73?w=400&h=220&fit=crop&auto=format',
             lexile: '990L', wordCount: 560, standards: ['RI.7.1','RI.7.2','RI.7.3'], keywords: ['Mayflower Compact','self-government','democracy','colony'],
             summary: 'Before stepping off the ship, 41 men signed a short agreement that would shape the colony for decades. What did it actually say — and why does it matter?',
             excerpt: "When the Mayflower anchored off Cape Cod, a problem emerged. The colonists' charter had been for Virginia, and some passengers argued that without it, no laws applied. To prevent the colony from falling apart before it began, 41 of the men aboard signed a short document we now call the Mayflower Compact. In just a few sentences, they agreed to make laws together and obey them — an early step toward self-government in the English colonies." }
@@ -709,7 +717,7 @@
             ? '<span class="cr-box"><span class="cr-tick">✓</span></span>'
             : '<span class="cr-radio"><span class="cr-dot"></span></span>') +
         '</div>' +
-        '<div class="cr-thumb" style="background-image:linear-gradient(135deg,' + item.gradient[0] + ',' + item.gradient[1] + ');">' +
+        '<div class="cr-thumb" style="' + (item.imageUrl ? 'background-image:url(' + item.imageUrl + ');background-size:cover;background-position:center;' : 'background-image:linear-gradient(135deg,' + item.gradient[0] + ',' + item.gradient[1] + ');') + '">' +
           '<span class="cr-icon">' + icon + '</span>' +
         '</div>' +
         '<div class="cr-body">' +
@@ -1121,7 +1129,7 @@
       const checkSvg = '<svg width="11" height="9" viewBox="0 0 11 9" fill="none"><polyline points="1 4.5 4 7.5 10 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
       row.innerHTML =
-        '<div class="rr-thumb" style="background-image:linear-gradient(135deg,' + item.gradient[0] + ',' + item.gradient[1] + ');">' +
+        '<div class="rr-thumb" style="' + (item.imageUrl ? 'background-image:url(' + item.imageUrl + ');background-size:cover;background-position:center;' : 'background-image:linear-gradient(135deg,' + item.gradient[0] + ',' + item.gradient[1] + ');') + '">' +
           (isVideo ? '<span class="rr-play">▶</span>' : '') +
           '<span class="rr-type-badge rr-type-' + item.type + '">' + item.typeLabel + '</span>' +
           '<span class="rr-checkbox">' + checkSvg + '</span>' +
@@ -1358,7 +1366,7 @@
       }).join('');
 
       pmBody.innerHTML =
-        '<div class="preview-hero" style="background-image:linear-gradient(135deg,' + item.gradient[0] + ',' + item.gradient[1] + ');">' +
+        '<div class="preview-hero" style="' + (item.imageUrl ? 'background-image:url(' + item.imageUrl + ');background-size:cover;background-position:center;' : 'background-image:linear-gradient(135deg,' + item.gradient[0] + ',' + item.gradient[1] + ');') + '">' +
           '<div class="preview-type-chip">' + typeChip + '</div>' +
           (item.type === 'video' ? '<div class="preview-play">▶</div>' : '') +
         '</div>' +
@@ -1490,7 +1498,7 @@
           ? '<div class="scc-meta-cell"><span class="scc-meta-label">Reading level</span><span class="scc-meta-value">' + band + '</span></div>'
           : '';
         return '<div class="selected-content-card">' +
-          '<div class="scc-thumb" style="background:linear-gradient(135deg,' + it.gradient[0] + ',' + it.gradient[1] + ');">' +
+          '<div class="scc-thumb" style="' + (it.imageUrl ? 'background-image:url(' + it.imageUrl + ');background-size:cover;background-position:center;' : 'background:linear-gradient(135deg,' + it.gradient[0] + ',' + it.gradient[1] + ');') + '">' +
             (isVideo ? '<svg width="28" height="28" viewBox="0 0 24 24" fill="white" opacity="0.8"><polygon points="5 3 19 12 5 21 5 3"/></svg>' : '') +
           '</div>' +
           '<div class="scc-body">' +
@@ -1507,7 +1515,7 @@
       const rows = selected.map(function (it) {
         const icon = it.type === 'video' ? '▶' : '📄';
         return '<div class="stack-item">' +
-          '<div class="stack-thumb" style="background-image:linear-gradient(135deg,' + it.gradient[0] + ',' + it.gradient[1] + ');">' + icon + '</div>' +
+          '<div class="stack-thumb" style="' + (it.imageUrl ? 'background-image:url(' + it.imageUrl + ');background-size:cover;background-position:center;' : 'background-image:linear-gradient(135deg,' + it.gradient[0] + ',' + it.gradient[1] + ');') + '">' + icon + '</div>' +
           '<div>' +
             '<div class="stack-item-title">' + it.title + '</div>' +
             '<div class="stack-item-meta">' + it.typeLabel + ' · ' + it.length + '</div>' +
@@ -1762,23 +1770,23 @@
     const COMMUNITY_HELPERS_BUNDLE = {
       title: 'Community Helpers in Our Neighborhood',
       items: [
-        { id: 'ch-1', type: 'article', typeLabel: 'Article', title: 'Meet the firefighters keeping our neighborhood safe', length: '4 min read', grade: 'Gr 2', gradient: ['#ffb199','#ffd8c8'],
+        { id: 'ch-1', type: 'article', typeLabel: 'Article', title: 'Meet the firefighters keeping our neighborhood safe', length: '4 min read', grade: 'Gr 2', gradient: ['#ffb199','#ffd8c8'], imageUrl: 'https://images.unsplash.com/photo-1575867094974-9e16b6f55360?w=400&h=220&fit=crop&auto=format',
           lexile: '420L', wordCount: 312, standards: ['RI.2.1','RI.2.3'], keywords: ['firefighters','safety','rescue','community'],
           summary: 'A look inside a local firehouse, including the trucks, tools, and teamwork firefighters rely on to keep their community safe.',
           excerpt: 'When there is a fire, firefighters are the first people to help. They wear big, strong suits called "turnout gear" that keep them safe from heat and smoke. Firefighters work together as a team. One may drive the truck. Another may connect the long hose to a hydrant. A third may help people get out of a building safely. Their job is more than just putting out fires — they also rescue people, teach fire safety, and help after car accidents.' },
-        { id: 'ch-2', type: 'article', typeLabel: 'Article', title: 'Doctors and nurses: Helpers who keep us healthy', length: '3 min read', grade: 'Gr 2', gradient: ['#bcd8ff','#e8d8ff'],
+        { id: 'ch-2', type: 'article', typeLabel: 'Article', title: 'Doctors and nurses: Helpers who keep us healthy', length: '3 min read', grade: 'Gr 2', gradient: ['#bcd8ff','#e8d8ff'], imageUrl: 'https://plus.unsplash.com/premium_photo-1661580574627-9211124e5c3f?w=400&h=220&fit=crop&auto=format',
           lexile: '410L', wordCount: 285, standards: ['RI.2.1','RI.2.3'], keywords: ['doctors','nurses','health','hospital'],
           summary: 'An introduction to doctors and nurses — what they do, the tools they use, and why regular checkups help kids stay healthy.',
           excerpt: 'Doctors and nurses are helpers who take care of us when we are sick. They also help us stay healthy. Have you ever been to a doctor for a checkup? The doctor might listen to your heart with a tool called a stethoscope. A nurse might measure how tall you are getting. Doctors and nurses work in hospitals, clinics, and even schools. Every day, they help people feel better.' },
-        { id: 'ch-3', type: 'video',   typeLabel: 'Video',   title: 'A day in the life of a mail carrier', length: '2 min watch', grade: 'Gr 2', gradient: ['#d9eaff','#c0d0ff'],
+        { id: 'ch-3', type: 'video',   typeLabel: 'Video',   title: 'A day in the life of a mail carrier', length: '2 min watch', grade: 'Gr 2', gradient: ['#d9eaff','#c0d0ff'], imageUrl: 'https://plus.unsplash.com/premium_photo-1661409456616-e91082fc182c?w=400&h=220&fit=crop&auto=format',
           lexile: 'N/A', wordCount: null, standards: ['SL.2.2','RI.2.3'], keywords: ['mail carrier','post office','delivery'],
           summary: 'Follow Maria, a mail carrier, as she shows the route she walks each day and the people she meets along the way.',
           excerpt: 'In this 2-minute video, students follow a mail carrier named Maria from the moment she arrives at the post office to the final stop on her delivery route. The video covers sorting mail, loading the truck, and the variety of people a mail carrier sees in a single day.' },
-        { id: 'ch-4', type: 'article', typeLabel: 'Article', title: 'Teachers: Helpers who guide our learning', length: '4 min read', grade: 'Gr 2', gradient: ['#d0d8ff','#f1c7ff'],
+        { id: 'ch-4', type: 'article', typeLabel: 'Article', title: 'Teachers: Helpers who guide our learning', length: '4 min read', grade: 'Gr 2', gradient: ['#d0d8ff','#f1c7ff'], imageUrl: 'https://plus.unsplash.com/premium_photo-1682888442432-a1bc427c0d91?w=400&h=220&fit=crop&auto=format',
           lexile: '440L', wordCount: 340, standards: ['RI.2.1','RI.2.3','SL.2.2'], keywords: ['teachers','school','learning'],
           summary: 'A close look at what teachers do before, during, and after the school day to support student learning.',
           excerpt: 'Teachers are community helpers, too. A teacher plans lessons, reads books, and helps students solve problems. But a teacher\'s day begins long before the bell rings. They check papers, set up the classroom, and think about how to make each lesson fun. After school, teachers keep working — planning for tomorrow and meeting with families.' },
-        { id: 'ch-5', type: 'video',   typeLabel: 'Video',   title: 'How sanitation workers keep our city clean', length: '3 min watch', grade: 'Gr 2', gradient: ['#c2e4ff','#d9eaff'],
+        { id: 'ch-5', type: 'video',   typeLabel: 'Video',   title: 'How sanitation workers keep our city clean', length: '3 min watch', grade: 'Gr 2', gradient: ['#c2e4ff','#d9eaff'], imageUrl: 'https://plus.unsplash.com/premium_photo-1661963024527-c855211ad31d?w=400&h=220&fit=crop&auto=format',
           lexile: 'N/A', wordCount: null, standards: ['SL.2.2','RI.2.3'], keywords: ['sanitation','trash','recycling','city'],
           summary: 'A behind-the-scenes look at the sanitation crew that keeps a neighborhood clean — from early-morning pickups to recycling.',
           excerpt: 'This 3-minute video shows sanitation workers as they start their early-morning shift. Students will see how trucks are loaded, how recycling is sorted, and why this work is so important to a clean, safe community.' }
