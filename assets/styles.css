@@ -2670,6 +2670,8 @@ img { max-width: 100%; display: block; }
 }
 .c-tab.active { color: var(--nw-text); border-bottom-color: var(--nw-blue); }
 .c-tab:hover:not(.active) { color: var(--nw-text); }
+.c-tab-panel { display: none; }
+.c-tab-panel.active { display: block; }
 .featured-desc { font-size: 13px; color: var(--nw-text-muted); line-height: 1.5; padding: 12px 16px 0; }
 
 /* Article grid inside content-card (4-up) */
